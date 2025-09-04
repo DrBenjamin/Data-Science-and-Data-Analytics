@@ -97,6 +97,7 @@ Key technological and methodological developments shaping the data landscape:
 * Predictive Analytics: What is likely to happen?
 * Prescriptive Analytics: What should we do?
 
+\newpage
 # Data Analytic Competencies
 
 xy
@@ -143,6 +144,7 @@ xy
 * Evaluate robustness, reliability, and validity.
 * Assess limitations, bias, and ethical impact.
 
+\newpage
 # Applications in the Programming Language R
 
 xy
@@ -190,6 +192,7 @@ Explore fundamental packages:
 * Interpretation of coefficients and marginal effects.
 * Sensitivity and robustness checks.
 
+\newpage
 # Literature {#sec-literature}
 
 All references for this course.
@@ -197,49 +200,13 @@ All references for this course.
 ## Essential Readings
 
 ```{r essential_bib, results='asis', echo=FALSE, warning=FALSE}
-library(RefManageR)
-# Simplifying PDF detection to core knitr check (quarto passes through)
-is_pdf <- knitr::is_latex_output()
-BibOptions(
-    check.entries = FALSE,
-    bib.style = "authoryear",
-    cite.style = "authoryear",
-    style = if (is_pdf) "latex" else "html",
-    no.print.fields = c()
-)
-bib_essential <- ReadBib("literature/essential_readings.bib", check = FALSE)
-if (is_pdf) {
-    print(bib_essential)
-} else {
-    formatted <- format(bib_essential)
-    # Collapsing internal newlines so each entry stays a single bullet line
-    formatted <- vapply(formatted, function(x) gsub("\\s*\\n\\s*", " ", x), character(1))
-    cat("\n")
-    for (i in seq_along(formatted)) cat("- ", formatted[i], "\n", sep = "")
-    cat("\n")
-}
+source("literature/refmanager.r")
+render_bib("literature/essential_readings.bib")
 ```
 
 ## Further Readings
 
 ```{r further_bib, results='asis', echo=FALSE, warning=FALSE}
-library(RefManageR)
-is_pdf <- knitr::is_latex_output()
-BibOptions(
-    check.entries = FALSE,
-    bib.style = "authoryear",
-    cite.style = "authoryear",
-    style = if (is_pdf) "latex" else "html",
-    no.print.fields = c()
-)
-bib_further <- ReadBib("literature/further_readings.bib", check = FALSE)
-if (is_pdf) {
-    print(bib_further)
-} else {
-    formatted <- format(bib_further)
-    formatted <- vapply(formatted, function(x) gsub("\\s*\\n\\s*", " ", x), character(1))
-    cat("\n")
-    for (i in seq_along(formatted)) cat("- ", formatted[i], "\n", sep = "")
-    cat("\n")
-}
+source("literature/refmanager.r")
+render_bib("literature/further_readings.bib")
 ```
