@@ -13,13 +13,14 @@ date-format: long
 abstract: |
   This document provides the course material for Data Science and Data Analytics (B. A. – International Business Management). Upon successful completion of the course, students will be able to: recognize important technological and methodological advancements in data science and distinguish between descriptive, predictive, and prescriptive analytics; demonstrate proficiency in classifying data and variables, collecting and managing data, and conducting comprehensive data evaluations; utilize R for effective data manipulation, cleaning, visualization, outlier detection, and dimensionality reduction; conduct sophisticated data exploration and mining techniques (including PCA, Factor Analysis, and Regression Analysis) to discover underlying patterns and inform decision-making; analyze and interpret causal relationships in data using regression analysis; evaluate and organize the implementation of a data analysis project in a business environment; and communicate the results and effects of a data analysis project in a structured way.
 format:
-  html: 
+  html:
     embed-resources: true
     theme: cerulean
     toc: true
-    toc-expand: 2
-    toc-depth: 2
+    toc-expand: 5
+    toc-depth: 5
     number-sections: true
+    number-depth: 5
   pdf:
     keep-tex: false
     include-in-header:
@@ -31,17 +32,15 @@ format:
         \renewcommand\Affilfont{\small}
     documentclass: scrartcl
     classoption: [onecolumn, oneside, a4paper]
-    cite-method: natbib
     linkcolor: blue
     urlcolor: blue
-    link-citations: true
     filecolor: magenta
     citecolor: magenta
     colorlinks: true
     margin-left: "1in"
     margin-right: "1in"
     margin-top: "1in"
-    margin-bottom: "1in" 
+    margin-bottom: "1in"
     papersize: a4
     fig-cap-location: top
     toc: true
@@ -49,16 +48,15 @@ format:
     number-sections: true
     lof: false
     lot: false
-link-citations: true
-bibliography: ["./literature/essential_readings.bib", "./literature/further_readings.bib"]
+link-citations: false
 csl: "./literature/apa.csl"
-nocite: "@*"
+suppress-bibliography: true
 execute:
-  enabled: false
+  enabled: true
+  echo: false
 ---
 
 \clearpage
-
 
 # Scope and Nature of Data Science
 
@@ -192,7 +190,56 @@ Explore fundamental packages:
 * Interpretation of coefficients and marginal effects.
 * Sensitivity and robustness checks.
 
-# Literature
+# Literature {#sec-literature}
 
-::: {refs}
-:::
+All references for this course.
+
+## Essential Readings
+
+```{r essential_bib, results='asis', echo=FALSE, warning=FALSE}
+library(RefManageR)
+# Simplifying PDF detection to core knitr check (quarto passes through)
+is_pdf <- knitr::is_latex_output()
+BibOptions(
+    check.entries = FALSE,
+    bib.style = "authoryear",
+    cite.style = "authoryear",
+    style = if (is_pdf) "latex" else "html",
+    no.print.fields = c()
+)
+bib_essential <- ReadBib("literature/essential_readings.bib", check = FALSE)
+if (is_pdf) {
+    print(bib_essential)
+} else {
+    formatted <- format(bib_essential)
+    # Collapsing internal newlines so each entry stays a single bullet line
+    formatted <- vapply(formatted, function(x) gsub("\\s*\\n\\s*", " ", x), character(1))
+    cat("\n")
+    for (i in seq_along(formatted)) cat("- ", formatted[i], "\n", sep = "")
+    cat("\n")
+}
+```
+
+## Further Readings
+
+```{r further_bib, results='asis', echo=FALSE, warning=FALSE}
+library(RefManageR)
+is_pdf <- knitr::is_latex_output()
+BibOptions(
+    check.entries = FALSE,
+    bib.style = "authoryear",
+    cite.style = "authoryear",
+    style = if (is_pdf) "latex" else "html",
+    no.print.fields = c()
+)
+bib_further <- ReadBib("literature/further_readings.bib", check = FALSE)
+if (is_pdf) {
+    print(bib_further)
+} else {
+    formatted <- format(bib_further)
+    formatted <- vapply(formatted, function(x) gsub("\\s*\\n\\s*", " ", x), character(1))
+    cat("\n")
+    for (i in seq_along(formatted)) cat("- ", formatted[i], "\n", sep = "")
+    cat("\n")
+}
+```
