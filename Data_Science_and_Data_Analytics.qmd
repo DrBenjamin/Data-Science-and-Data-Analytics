@@ -48,6 +48,9 @@ format:
     number-sections: true
     lof: false
     lot: false
+bibliography: 
+  - "./literature/essential_readings.bib"
+  - "./literature/further_readings.bib"
 link-citations: false
 csl: "./literature/apa.csl"
 suppress-bibliography: true
@@ -126,9 +129,22 @@ xy
 
 ## Data Collection
 
-* Identify internal and external sources.
-* Acquire via APIs, databases, surveys, sensors, or third-party vendors.
-* Assess provenance, licensing, and ethical considerations.
+Data collection is a fundamental competency in data science that encompasses the systematic gathering of information from various sources to support analytical objectives [@etinkaya-Rundel2021]. The quality and appropriateness of collected data directly influence the validity and reliability of subsequent analyses.
+
+![Data Collection Methods](./topics/Data%20Analytic%20Competencies/Data%20Collection/Method_of_data_collection.jpg)
+
+### Core Data Collection Principles
+
+* **Source Identification**: Identify internal and external sources based on analytical requirements.
+* **Acquisition Methods**: Acquire via APIs, databases, surveys, sensors, or third-party vendors.
+* **Quality Assessment**: Assess provenance, licensing, and ethical considerations.
+* **Methodological Rigor**: Apply systematic approaches to ensure data representativeness and minimize bias.
+
+### Data Collection Competencies
+
+Effective data collection requires competencies across multiple dimensions including technical proficiency, methodological understanding, and ethical awareness. Organizations must develop comprehensive frameworks for data collection that align with their analytical objectives while maintaining data quality standards.
+
+For detailed methodologies and best practices, refer to established [data collection research frameworks](https://researchmethodology.org/data-collection/) and the accompanying [Data Collection Competencies](./topics/Data%20Analytic%20Competencies/Data%20Collection/Data%20Collection%20Competencies.pdf) documentation.
 
 ## Data Management
 * Organize: schema design, naming conventions.
