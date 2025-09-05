@@ -126,9 +126,27 @@ xy
 
 ## Data Collection
 
-* Identify internal and external sources.
-* Acquire via APIs, databases, surveys, sensors, or third-party vendors.
-* Assess provenance, licensing, and ethical considerations.
+Data collection forms the foundational stage of any data science project, requiring systematic approaches to gather information that aligns with research objectives and analytical requirements. As outlined in modern statistical frameworks, effective data collection strategies must balance methodological rigor with practical constraints [@IntroductionToModernStatistics2e].
+
+![Methods of Data Collection](./topics/Data%20Analytic%20Competencies/Data%20Collection/Method_of_data_collection.jpg)
+
+### Core Data Collection Competencies
+
+The competencies required for effective data collection encompass both technical proficiency and methodological understanding (see `Data Collection Competencies.pdf` in course materials):
+
+* **Source Identification and Assessment**: Systematically identify internal and external data sources, evaluating their relevance, quality, and accessibility for the analytical objectives.
+
+* **Data Acquisition Methods**: Implement appropriate collection techniques including APIs, database queries, survey instruments, sensor networks, web scraping, and third-party vendor partnerships, ensuring methodological alignment with research design.
+
+* **Quality and Governance Framework**: Establish protocols for assessing data provenance, licensing agreements, ethical compliance, and regulatory requirements (GDPR, industry-specific standards).
+
+* **Methodological Considerations**: Apply principles from research methodology to ensure data collection approaches support valid statistical inference and minimize bias introduction during the acquisition process.
+
+### Contemporary Data Collection Landscape
+
+Modern data collection operates within an increasingly complex ecosystem characterized by diverse data types, real-time requirements, and distributed sources. The integration of traditional survey methods with emerging IoT sensors, social media APIs, and automated data pipelines requires comprehensive competency frameworks that address both technical implementation and methodological validity.
+
+*For comprehensive coverage of data collection methodologies and best practices, refer to: [Research Methodology - Data Collection](https://researchmethodology.org/data-collection/)*
 
 ## Data Management
 * Organize: schema design, naming conventions.
