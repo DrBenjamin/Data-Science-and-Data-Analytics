@@ -1,6 +1,6 @@
 ---
-name: Feature request
-about: Suggest a topic for the Data Science and Data Analytics course
+name: Content template request
+about: Creating a paragraph content template for the Data Science and Data Analytics course
 title: 'Embed all the mentioned content in a concise scientific context into the specified paragraph'
 labels: enhancement
 assignees: Copilot
