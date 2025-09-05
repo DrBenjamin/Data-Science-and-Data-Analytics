@@ -1,20 +1,26 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
-title: ''
+about: Suggest a topic for the Data Science and Data Analytics course
+title: 'Embed all the mentioned content in a concise scientific context into the specified paragraph'
 labels: enhancement
 assignees: Copilot
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+You prepare content for the Data Science and Data Analytics course. You want to embed all the mentioned content in a concise scientific context into the specified paragraph of the quarto file (`Data_Science_and_Data_Analytics.qmd`).
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+**Which paragraph(s) is this related to?**
+Section 2, Paragraph 2.4 (Data Collection)
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+**The content in the repository that should be added**
+Please use the following content files from the repository:
+- subfolder: `./topics/Data Analytic Competencies/Data Collection`
+- content files: `<subfolder>/Data Collection Competencies.pdf` and `<subfolder>/Method_of_data_collection.jpg`.
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+**The remote content that should be added**
+Please use the following remote content:
+- URL: `https://researchmethodology.org/data-collection/`
+
+**Additional context and content**
+Please use the following context and content to support your feature request:
+- literature references: `./literature/Introduction_to_Modern_Statistics_2e.pdf`
