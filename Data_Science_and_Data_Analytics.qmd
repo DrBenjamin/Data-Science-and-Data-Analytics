@@ -50,6 +50,7 @@ format:
     lot: false
 link-citations: false
 csl: "./literature/apa.csl"
+bibliography: ["./literature/essential_readings.bib", "./literature/further_readings.bib"]
 suppress-bibliography: true
 execute:
   enabled: true
@@ -65,6 +66,7 @@ xy
 ## Defining Data Science as an Academic Discipline
 
 Data science draws from and interacts with multiple foundational disciplines:
+
 * Informatics / Information Systems
 * Computer Science (algorithms, data structures, systems design)
 * Mathematics (linear algebra, calculus, optimization)
@@ -81,6 +83,7 @@ Data science draws from and interacts with multiple foundational disciplines:
 ## Emerging Trends
 
 Key technological and methodological developments shaping the data landscape:
+
 * Evolution of computing and data processing architectures.
 * Digitalization of processes and platforms.
 * Artificial Intelligence (AI), Machine Learning (ML), and Deep Learning (DL).
@@ -132,7 +135,7 @@ Data collection forms the foundational stage of any data science project, requir
 
 ### Core Data Collection Competencies
 
-The competencies required for effective data collection encompass both technical proficiency and methodological understanding (see `Data Collection Competencies.pdf` in course materials):
+The competencies required for effective data collection encompass both technical proficiency and methodological understanding (see [Data Collection Competencies.pdf](./topics/Data Analytic Competencies/Data Collection/Data Collection Competencies.pdf)):
 
 * **Source Identification and Assessment**: Systematically identify internal and external data sources, evaluating their relevance, quality, and accessibility for the analytical objectives.
 
@@ -149,6 +152,7 @@ Modern data collection operates within an increasingly complex ecosystem charact
 *For comprehensive coverage of data collection methodologies and best practices, refer to: [Research Methodology - Data Collection](https://researchmethodology.org/data-collection/)*
 
 ## Data Management
+
 * Organize: schema design, naming conventions.
 * Clean: resolve duplicates, inconsistencies, missingness.
 * Convert: type casting, normalization, encoding.
