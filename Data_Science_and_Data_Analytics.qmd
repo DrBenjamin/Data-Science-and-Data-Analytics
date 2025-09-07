@@ -129,7 +129,7 @@ xy
 
 ## Data Collection
 
-Data collection forms the foundational stage of any data science project, requiring systematic approaches to gather information that aligns with research objectives and analytical requirements. As outlined in modern statistical frameworks, effective data collection strategies must balance methodological rigor with practical constraints [@IntroductionToModernStatistics2e].
+Data collection forms the foundational stage of any data science project, requiring systematic approaches to gather information that aligns with research objectives and analytical requirements. As outlined in modern statistical frameworks, effective data collection strategies must balance methodological rigor with practical constraints [@etinkaya-Rundel2021].
 
 ![Methods of Data Collection](./topics/Data%20Analytic%20Competencies/Data%20Collection/Method_of_data_collection.jpg)
 
