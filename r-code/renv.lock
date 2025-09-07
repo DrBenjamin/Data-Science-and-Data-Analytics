@@ -164,6 +164,12 @@
       "Version": "1.7.6.1",
       "Source": "CRAN",
       "Hash": ""
+    },
+    "RefManageR": {
+      "Package": "RefManageR",
+      "Version": "1.4.0",
+      "Source": "CRAN",
+      "Hash": ""
     }
   }
 }
