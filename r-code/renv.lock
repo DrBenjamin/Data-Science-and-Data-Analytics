@@ -9,12 +9,6 @@
     ]
   },
   "Packages": {
-    "broom": {
-      "Package": "broom",
-      "Version": "1.0.9",
-      "Source": "CRAN",
-      "Hash": ""
-    },
     "caret": {
       "Package": "caret",
       "Version": "6.0-93",
