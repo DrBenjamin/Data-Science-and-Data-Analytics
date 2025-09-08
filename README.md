@@ -4,6 +4,15 @@ Course Data Science and Data Analytics in the Bachelor Studies International Bus
 
 ## Setup R Environment
 
+Setup the R environment using `renv`:
+
+```bash
+# Installing renv
+Rscript -e 'install.packages("renv", repos="https://cloud.r-project.org"); renv::restore(lockfile = "r-code/renv.lock")'
+```
+
+In the R console:
+
 ```r
 # Installing renv package if not already installed
 install.packages('renv')
@@ -15,10 +24,16 @@ renv::restore()
 install.packages(c("jsonlite", "rlang"))
 ```
 
-Update the project's R.profile:
+Update the project's `.Rprofile`:
 
 ```txt
 source("r-code/renv/activate.R")
+```
+
+and create a `.Renviron` file in the project root with the following content:
+
+```txt
+RENV_PROJECT=./r-code
 ```
 
 ### Update R Environment
@@ -26,9 +41,7 @@ source("r-code/renv/activate.R")
 ```r
 # Updating renv packages
 renv::update()
-
-# Updating renv lockfile
-renv::snapshot(lockfile = "r-code/renv.lock")
+```
 
 ## Knitting the Document
 

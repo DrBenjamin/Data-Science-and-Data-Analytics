@@ -10,8 +10,28 @@ if (file.exists(rcode_lock)) {
 }
 
 ## Activate renv from the project root so project-local libraries are used.
-if (file.exists("renv/activate.R")) {
-  tryCatch(source("renv/activate.R"), error = function(e) message("Failed to source renv/activate.R: ", e$message))
+if (file.exists("r-code/renv/activate.R")) {
+  tryCatch(source("r-code/renv/activate.R"), error = function(e) message("Failed to source r-code/renv/activate.R: ", e$message))
+} else {
+  # fallback: attempt to activate via the renv package (if installed)
+  if (requireNamespace("renv", quietly = TRUE)) {
+    tryCatch(renv::activate(), error = function(e) message("renv::activate() failed: ", e$message))
+  }
+}
+## If a lockfile exists under `r-code/`, tell renv to treat that as the project
+## This ensures renv::activate() and the autoloader use the lockfile location.
+rcode_lock <- file.path("r-code", "renv.lock")
+if (file.exists(rcode_lock)) {
+  # point renv at the r-code directory as the project
+  Sys.setenv(RENV_PROJECT = normalizePath("r-code"))
+  # also set explicit lockfile path
+  Sys.setenv(RENV_PATHS_LOCKFILE = normalizePath(rcode_lock))
+  message("RENV_PROJECT set to r-code (lockfile detected)")
+}
+
+## Activate renv from the project root so project-local libraries are used.
+if (file.exists("r-code/renv/activate.R")) {
+  tryCatch(source("r-code/renv/activate.R"), error = function(e) message("Failed to source r-code/renv/activate.R: ", e$message))
 } else {
   # fallback: attempt to activate via the renv package (if installed)
   if (requireNamespace("renv", quietly = TRUE)) {

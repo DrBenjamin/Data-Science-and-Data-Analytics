@@ -1,3 +1,4 @@
+source("renv/activate.R")
 # Setting: when an interactive session starts inside r-code, activate renv from the project root
 # and keep r-code as the working directory.
 
