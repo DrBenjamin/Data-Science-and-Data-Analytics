@@ -60,13 +60,23 @@ execute:
 \clearpage
 # Scope and Nature of Data Science
 
+Let's start this course with some definitions and context.
+
+**Definition of Data Science:**
+
 > The ﬁeld of Data Science concerns techniques for extracting
 > knowledge from diverse data, with a particular focus on ‘big’
->data exhibiting ‘V’ attributes such as volume, velocity, var-
-> iety, value and veracity.
+> data exhibiting ‘V’ attributes such as volume, velocity, variety, value and veracity.
+
 [@Maneth2016]
 
-For skills and competencies required for data science, see [Skills Landscape](./topics/Scope and Nature of Data Science/The data science skills landscape slides.pdf).
+**Definition of Data Analytics:**
+
+Data analytics is the systematic process of examining data using statistical, computational, and domain-specific methods to extract insights, identify patterns, and support decision-making. It combines competencies in data handling, analysis techniques, and domain knowledge to generate actionable outcomes in organizational contexts.
+
+[@Cuadrado-Gallego2023]
+
+**Definition of Business Analytics:**
 
 > Business analytics is the science of posing and answering data questions related to
 > business. Business analytics has rapidly expanded in the last few years to include
@@ -77,7 +87,10 @@ For skills and competencies required for data science, see [Skills Landscape](./
 > business verticals to be valuable. The bridge between the tools and the applications
 > are the modeling methods used by managers and researchers in disciplines such as
 > finance, marketing, and operations.
+
 [@Pochiraju2019]
+
+For skills and competencies required for data science, see [Skills Landscape](./topics/Scope and Nature of Data Science/The data science skills landscape slides.pdf).
 
 ## Defining Data Science as an Academic Discipline
 
