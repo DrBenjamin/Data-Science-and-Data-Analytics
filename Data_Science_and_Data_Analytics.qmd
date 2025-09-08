@@ -63,7 +63,8 @@ execute:
 > The ﬁeld of Data Science concerns techniques for extracting
 > knowledge from diverse data, with a particular focus on ‘big’
 >data exhibiting ‘V’ attributes such as volume, velocity, var-
-> iety, value and veracity [@Maneth2016]
+> iety, value and veracity.
+[@Maneth2016]
 
 For skills and competencies required for data science, see [Skills Landscape](./topics/Scope and Nature of Data Science/The data science skills landscape slides.pdf).
 
@@ -75,7 +76,8 @@ For skills and competencies required for data science, see [Skills Landscape](./
 > analytics has to be soundly grounded in applications in various disciplines and
 > business verticals to be valuable. The bridge between the tools and the applications
 > are the modeling methods used by managers and researchers in disciplines such as
-> finance, marketing, and operations [@Pochiraju2019].
+> finance, marketing, and operations.
+[@Pochiraju2019]
 
 ## Defining Data Science as an Academic Discipline
 
