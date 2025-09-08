@@ -24,6 +24,9 @@ source("r-code/renv/activate.R")
 ### Update R Environment
 
 ```r
+# Updating renv packages
+renv::update()
+
 # Updating renv lockfile
 renv::snapshot(lockfile = "r-code/renv.lock")
 

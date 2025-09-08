@@ -60,7 +60,12 @@ execute:
 \clearpage
 # Scope and Nature of Data Science
 
-Data 
+> The ﬁeld of Data Science concerns techniques for extracting
+> knowledge from diverse data, with a particular focus on ‘big’
+>data exhibiting ‘V’ attributes such as volume, velocity, var-
+> iety, value and veracity [@Maneth2016]
+
+For skills and competencies required for data science, see [Skills Landscape](./topics/Scope and Nature of Data Science/The data science skills landscape slides.pdf).
 
 > Business analytics is the science of posing and answering data questions related to
 > business. Business analytics has rapidly expanded in the last few years to include
