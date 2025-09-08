@@ -1,3 +1,4 @@
+source("renv/activate.R")
 ## If a lockfile exists under `r-code/`, tell renv to treat that as the project
 ## This ensures renv::activate() and the autoloader use the lockfile location.
 rcode_lock <- file.path("r-code", "renv.lock")
