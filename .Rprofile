@@ -1,3 +1,23 @@
+## If a lockfile exists under `r-code/`, tell renv to treat that as the project
+## This ensures renv::activate() and the autoloader use the lockfile location.
+rcode_lock <- file.path("r-code", "renv.lock")
+if (file.exists(rcode_lock)) {
+  # point renv at the r-code directory as the project
+  Sys.setenv(RENV_PROJECT = normalizePath("r-code"))
+  # also set explicit lockfile path
+  Sys.setenv(RENV_PATHS_LOCKFILE = normalizePath(rcode_lock))
+  message("RENV_PROJECT set to r-code (lockfile detected)")
+}
+
+## Activate renv from the project root so project-local libraries are used.
+if (file.exists("renv/activate.R")) {
+  tryCatch(source("renv/activate.R"), error = function(e) message("Failed to source renv/activate.R: ", e$message))
+} else {
+  # fallback: attempt to activate via the renv package (if installed)
+  if (requireNamespace("renv", quietly = TRUE)) {
+    tryCatch(renv::activate(), error = function(e) message("renv::activate() failed: ", e$message))
+  }
+}
 # Project .Rprofile
 # Keeping this minimal: session watcher should be started from the *user* ~/.Rprofile.
 # This file exists to avoid accidental overrides and can host project-specific options.
@@ -57,3 +77,11 @@ if (interactive()) {
   }
 }
 # --- End radian configuration ---
+
+# Setting project working directory to r-code for interactive sessions.
+if (interactive()) {
+  target <- file.path(getwd(), "r-code")
+  if (dir.exists(target)) {
+    setwd(target)
+  }
+}

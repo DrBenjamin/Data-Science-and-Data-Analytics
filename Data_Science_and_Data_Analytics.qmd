@@ -58,10 +58,19 @@ execute:
 ---
 
 \clearpage
-
 # Scope and Nature of Data Science
 
-xy
+Data 
+
+> Business analytics is the science of posing and answering data questions related to
+> business. Business analytics has rapidly expanded in the last few years to include
+> tools drawn from statistics, data management, data visualization, and machine learn-
+> ing. There is increasing emphasis on big data handling to assimilate the advances
+> made in data sciences. As is often the case with applied methodologies, business
+> analytics has to be soundly grounded in applications in various disciplines and
+> business verticals to be valuable. The bridge between the tools and the applications
+> are the modeling methods used by managers and researchers in disciplines such as
+> finance, marketing, and operations [@Pochiraju2019].
 
 ## Defining Data Science as an Academic Discipline
 

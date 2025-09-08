@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.3.2",
+    "Version": "4.5.1",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -11,19 +11,19 @@
   "Packages": {
     "caret": {
       "Package": "caret",
-      "Version": "6.0-93",
+      "Version": "7.0-1",
       "Source": "CRAN",
       "Hash": ""
     },
     "data.table": {
       "Package": "data.table",
-      "Version": "1.14.8",
+      "Version": "1.17.8",
       "Source": "CRAN",
       "Hash": ""
     },
     "dplyr": {
       "Package": "dplyr",
-      "Version": "1.1.3",
+      "Version": "1.1.4",
       "Source": "CRAN",
       "Hash": ""
     },
@@ -35,103 +35,103 @@
     },
     "fs": {
       "Package": "fs",
-      "Version": "1.6.1",
+      "Version": "1.6.6",
       "Source": "CRAN",
       "Hash": ""
     },
     "ggplot2": {
       "Package": "ggplot2",
-      "Version": "3.4.3",
+      "Version": "3.5.2",
       "Source": "CRAN",
       "Hash": ""
     },
     "httr": {
       "Package": "httr",
-      "Version": "1.4.6",
+      "Version": "1.4.7",
       "Source": "CRAN",
       "Hash": ""
     },
     "janitor": {
       "Package": "janitor",
-      "Version": "2.1.0",
+      "Version": "2.2.1",
       "Source": "CRAN",
       "Hash": ""
     },
     "jsonlite": {
       "Package": "jsonlite",
-      "Version": "1.9.3",
+      "Version": "2.0.0",
       "Source": "CRAN",
       "Hash": ""
     },
     "knitr": {
       "Package": "knitr",
-      "Version": "1.41",
+      "Version": "1.50",
       "Source": "CRAN",
       "Hash": ""
     },
     "lubridate": {
       "Package": "lubridate",
-      "Version": "1.9.3",
+      "Version": "1.9.4",
       "Source": "CRAN",
       "Hash": ""
     },
     "modelr": {
       "Package": "modelr",
-      "Version": "0.1.10",
+      "Version": "0.1.11",
       "Source": "CRAN",
       "Hash": ""
     },
     "purrr": {
       "Package": "purrr",
-      "Version": "1.1.2",
+      "Version": "1.1.0",
       "Source": "CRAN",
       "Hash": ""
     },
     "randomForest": {
       "Package": "randomForest",
-      "Version": "4.7-1.1",
+      "Version": "4.7-1.2",
       "Source": "CRAN",
       "Hash": ""
     },
     "readr": {
       "Package": "readr",
-      "Version": "2.1.4",
+      "Version": "2.1.5",
       "Source": "CRAN",
       "Hash": ""
     },
     "rmarkdown": {
       "Package": "rmarkdown",
-      "Version": "2.24",
+      "Version": "2.29",
       "Source": "CRAN",
       "Hash": ""
     },
     "rlang": {
       "Package": "rlang",
-      "Version": "1.1.2",
+      "Version": "1.1.6",
       "Source": "CRAN",
       "Hash": ""
     },
     "rnaturalearth": {
       "Package": "rnaturalearth",
-      "Version": "0.3.5",
+      "Version": "1.1.0",
       "Source": "CRAN",
       "Hash": ""
     },
     "rvest": {
       "Package": "rvest",
-      "Version": "1.0.6",
+      "Version": "1.0.5",
       "Source": "CRAN",
       "Hash": ""
     },
     "stringr": {
       "Package": "stringr",
-      "Version": "1.5.0",
+      "Version": "1.5.1",
       "Source": "CRAN",
       "Hash": ""
     },
     "tibble": {
       "Package": "tibble",
-      "Version": "3.2.2",
+      "Version": "3.3.0",
       "Source": "CRAN",
       "Hash": ""
     },
@@ -149,13 +149,13 @@
     },
     "usethis": {
       "Package": "usethis",
-      "Version": "2.1.6",
+      "Version": "3.2.1",
       "Source": "CRAN",
       "Hash": ""
     },
     "xgboost": {
       "Package": "xgboost",
-      "Version": "1.7.6.1",
+      "Version": "1.7.11.1",
       "Source": "CRAN",
       "Hash": ""
     },

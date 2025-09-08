@@ -12,8 +12,8 @@ Encoding: UTF-8
 RnwWeave: Sweave
 LaTeX: pdfLaTeX
 
-PythonType: system
-PythonVersion: 3.9.6
-PythonPath: /usr/bin/python3
+PythonType: conda
+PythonVersion: 3.11.13
+PythonPath: ~/conda/envs/r-reticulate/bin/python3.11
 
-ProjectName: Rao default project
+ProjectName: Data Science and Data Analytics
