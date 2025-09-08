@@ -68,7 +68,7 @@ Let's start this course with some definitions and context.
 > knowledge from diverse data, with a particular focus on ‘big’
 > data exhibiting ‘V’ attributes such as volume, velocity, variety, value and veracity.
 
-[@Maneth2016]
+@Maneth2016
 
 **Definition of Data Analytics:**
 
@@ -86,7 +86,7 @@ Data analytics is the systematic process of examining data using statistical, co
 > are the modeling methods used by managers and researchers in disciplines such as
 > finance, marketing, and operations.
 
-[@Pochiraju2019]
+@Pochiraju2019
 
 For skills and competencies required for data science, see [Skills Landscape](./topics/Scope and Nature of Data Science/The data science skills landscape slides.pdf).
 
@@ -94,11 +94,23 @@ For skills and competencies required for data science, see [Skills Landscape](./
 
 Data science draws from and interacts with multiple foundational disciplines:
 
-* Informatics / Information Systems
-* Computer Science (algorithms, data structures, systems design)
-* Mathematics (linear algebra, calculus, optimization)
-* Statistics & Econometrics (inference, modeling, causal analysis)
-* Social Science & Behavioral Sciences (contextual interpretation, experimental design)
+* **Informatics / Information Systems:**
+
+  xy
+
+* **Computer Science (algorithms, data structures, systems design):**
+
+  xy
+
+* **Mathematics (linear algebra, calculus, optimization):**
+
+  xy
+* **Statistics & Econometrics (inference, modeling, causal analysis):**
+
+  xy
+* **Social Science & Behavioral Sciences (contextual interpretation, experimental design):**
+
+  xy
 
 ## Significance of Business Data Analysis for Decision-Making
 
