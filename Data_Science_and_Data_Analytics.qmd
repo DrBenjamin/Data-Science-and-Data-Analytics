@@ -257,15 +257,22 @@ Modern data collection operates within an increasingly complex ecosystem charact
 \newpage
 # Applications in the Programming Language R
 
-xy
+Please read the [How to Use R for Data Science](https://hubchev.github.io/ds/) from Prof. Dr. Huber for any basic questions regarding R programming.
 
 ## Core tidyverse Tooling
 
-Explore fundamental packages:
-* `dplyr` for data manipulation (filter, mutate, summarise, joins).
+Fundamental packages:
+
+* `dplyr` for data manipulation (filter, mutate, summarize, joins).
 * `tidyr` for data reshaping (pivoting, nesting, separating, unnesting).
 * `ggplot2` for layered grammar-based visualization.
-* (Optionally) `readr`, `purrr`, `stringr`, `forcats` for ingestion, functional iteration, text, and factor handling.
+* some more R libraries:
+  * `readr`
+  * `purrr`
+  * `stringr`
+  * `forcats`
+
+  for ingestion, functional iteration, text, and factor handling.
 
 ## Data Visualization Principles
 
