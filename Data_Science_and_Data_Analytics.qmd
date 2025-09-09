@@ -104,7 +104,7 @@ Data science draws from and interacts with multiple foundational disciplines:
 
   Computer science provides the computational foundation for data science through algorithm design, complexity analysis, and efficient data structures. Core contributions include machine learning algorithms, distributed computing paradigms, database systems, and software engineering practices. System design principles enable scalable data processing architectures, while computational thinking frameworks guide algorithmic problem-solving approaches essential for data-driven solutions.
 
-  See also: [Analytical Skills for Business (WS 2025/26)](https://drbenjamin.github.io/analytical-skills.html#sec-intro).
+  See also: [Analytical Skills for Business - 1 Introduction](https://drbenjamin.github.io/analytical-skills.html#sec-intro).
 
 * **Mathematics (linear algebra, calculus, optimization):**
 
@@ -204,7 +204,7 @@ Modern data collection operates within an increasingly complex ecosystem charact
 * Clean: resolve duplicates, inconsistencies, missingness.
 * Convert: type casting, normalization, encoding.
 * Curate: maintain lineage, documentation, metadata.
-* Preserve: backups, versioning, retention policies.
+* Preserve: backups, versioning (see also [Analytical Skills for Business - 1.1 Implementing version control systems](https://drbenjamin.github.io/analytical-skills.html#implementing-version-control-systems)), retention policies.
 
 ## Data Evaluation
 
