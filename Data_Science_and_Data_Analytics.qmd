@@ -257,7 +257,7 @@ Modern data collection operates within an increasingly complex ecosystem charact
 \newpage
 # Applications in the Programming Language R
 
-Please read the [How to Use R for Data Science](https://hubchev.github.io/ds/) from Prof. Dr. Huber for any basic questions regarding R programming.
+Please read the [How to Use R for Data Science](https://hubchev.github.io/ds/) by Prof. Dr. Huber for any basic questions regarding R programming.
 
 ## Core tidyverse Tooling
 
