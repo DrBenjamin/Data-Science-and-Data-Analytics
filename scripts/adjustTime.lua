@@ -17,7 +17,7 @@ function Meta(meta)
     -- compute current time + 2 hours (seconds)
     local t = os.time() + 2 * 60 * 60
     -- format as UTC time then append +02:00 offset so Quarto parses as local+02
-    local iso = os.date("!%d %m %Y %H:%M", t) .. "+02:00"
+    local iso = os.date("!%d.%m.%Y %H:%M", t)
     meta.date = pandoc.MetaString(iso)
   end
 

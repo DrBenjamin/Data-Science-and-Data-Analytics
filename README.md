@@ -31,6 +31,12 @@ Rscript -e 'install.packages("knitr", repos="https://cloud.r-project.org")'
 
 # Installing RefManageR package
 Rscript -e 'install.packages("RefManageR", repos="https://cloud.r-project.org")'
+
+# Installing jsonlite package
+Rscript -e 'install.packages("jsonlite", repos="https://cloud.r-project.org")'
+
+# Installing rlang package
+Rscript -e 'install.packages("rlang", repos="https://cloud.r-project.org")'
 ```
 
 In the R console:
