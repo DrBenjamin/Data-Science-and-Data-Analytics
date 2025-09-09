@@ -168,6 +168,7 @@ The significance of business data analysis for decision-making extends beyond te
 
 For comprehensive coverage of business data analysis methodologies and applications, see [Advanced Business Analytics](./topics/Scope%20and%20Nature%20of%20Data%20Science/Business%20Data%20Analysis/978-3-031-78070-7.pdf) and the analytical foundations outlined in @Evans2020.
 
+<!-- unfinished content
 ## Emerging Trends
 
 Key technological and methodological developments shaping the data landscape:
@@ -214,6 +215,7 @@ xy
 * Clarify analytical purpose and domain context.
 * Define entities, observational units, and identifiers.
 * Align business concepts with data structures.
+-->
 
 ## Data Collection
 
@@ -239,6 +241,7 @@ Modern data collection operates within an increasingly complex ecosystem charact
 
 *For comprehensive coverage of data collection methodologies and best practices, refer to: [Research Methodology - Data Collection](https://researchmethodology.org/data-collection/)*
 
+<!-- unfinished content
 ## Data Management
 
 * Organize: schema design, naming conventions.
@@ -253,12 +256,14 @@ Modern data collection operates within an increasingly complex ecosystem charact
 * Conduct exploratory, inferential, and predictive procedures appropriately.
 * Evaluate robustness, reliability, and validity.
 * Assess limitations, bias, and ethical impact.
+-->
 
 \newpage
 # Applications in the Programming Language R
 
 Please read the [How to Use R for Data Science](https://hubchev.github.io/ds/) by Prof. Dr. Huber for any basic questions regarding R programming.
 
+<!-- unfinished content
 ## Core tidyverse Tooling
 
 Fundamental packages:
@@ -309,6 +314,7 @@ Fundamental packages:
 * Interpretation of coefficients and marginal effects.
 * Sensitivity and robustness checks.
 
+-->
 \newpage
 # Literature {#sec-literature}
 
