@@ -22,6 +22,9 @@ Rscript -e 'install.packages("renv", repos="https://cloud.r-project.org"); renv:
 
 # Installing reticulate package
 Rscript -e 'install.packages("reticulate", repos="https://cloud.r-project.org")'
+
+# Installing rmarkdown package
+Rscript -e 'install.packages("rmarkdown", repos="https://cloud.r-project.org")'
 ```
 
 In the R console:
