@@ -57,7 +57,7 @@ if (interactive() && Sys.getenv("RSTUDIO") == "" && Sys.getenv("TERM_PROGRAM") =
         message("(Project .Rprofile) Sourcing did not attach tools:vscode. Check required packages (jsonlite, rlang) and extension path.")
       }
     } else {
-      message("(Project .Rprofile) VS Code session watcher not yet attached and user init missing: " , user_init)
+      message("(Project .Rprofile) VS Code session watcher not yet attached and user init missing: ", user_init)
     }
   }
 }

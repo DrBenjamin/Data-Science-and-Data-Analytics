@@ -2,6 +2,16 @@
 
 Course Data Science and Data Analytics in the Bachelor Studies International Business Management (B. A.) at the Hochschule Fresenius - University of Applied Sciences - International Business School in Cologne Germany.
 
+## Setup Python Environment
+
+Setup the Python environment using `conda`:
+
+```bash
+# Create and activate the conda environment
+conda env create -f python/environment.yml
+conda activate r-reticulate
+```
+
 ## Setup R Environment
 
 Setup the R environment using `renv`:
@@ -9,6 +19,9 @@ Setup the R environment using `renv`:
 ```bash
 # Installing renv
 Rscript -e 'install.packages("renv", repos="https://cloud.r-project.org"); renv::restore(lockfile = "r-code/renv.lock")'
+
+# Installing reticulate package
+Rscript -e 'install.packages("reticulate", repos="https://cloud.r-project.org")'
 ```
 
 In the R console:

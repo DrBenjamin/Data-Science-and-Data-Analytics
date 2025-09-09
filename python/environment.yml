@@ -1,0 +1,11 @@
+name: r-reticulate
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - r-base=4.5.1
+  - r-jsonlite
+  - r-rlang
+  - pip
+  - pip:
+    - -r requirements.txt
