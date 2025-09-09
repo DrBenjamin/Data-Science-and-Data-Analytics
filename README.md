@@ -36,6 +36,10 @@ install.packages('renv')
 # Restoring the R environment from the lockfile
 renv::restore()
 
+# Snapshot the current state of the R environment
+renv::settings$snapshot.type("all")
+renv::snapshot(confirm = FALSE)
+
 # Installing needed packages
 install.packages(c("jsonlite", "rlang"))
 ```
