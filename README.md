@@ -25,6 +25,12 @@ Rscript -e 'install.packages("reticulate", repos="https://cloud.r-project.org")'
 
 # Installing rmarkdown package
 Rscript -e 'install.packages("rmarkdown", repos="https://cloud.r-project.org")'
+
+# Installing knitr package
+Rscript -e 'install.packages("knitr", repos="https://cloud.r-project.org")'
+
+# Installing RefManageR package
+Rscript -e 'install.packages("RefManageR", repos="https://cloud.r-project.org")'
 ```
 
 In the R console:
