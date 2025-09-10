@@ -42,6 +42,11 @@ Rscript -e 'install.packages("rlang", repos="https://cloud.r-project.org")'
 In the R console:
 
 ```r
+# Checking R installation
+R.home("bin")
+file.path(R.home("bin"), "R")
+R.version
+
 # Installing renv package if not already installed
 install.packages('renv')
 
