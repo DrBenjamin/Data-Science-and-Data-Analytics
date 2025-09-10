@@ -100,7 +100,7 @@ Data science draws from and interacts with multiple foundational disciplines:
 
   Informatics provides the foundational understanding of information processing, storage, and retrieval systems that underpin data science infrastructure. It encompasses database design, data modeling, information architecture, and system integration principles essential for managing large-scale data ecosystems. Information systems contribute knowledge about organizational data flows, enterprise architectures, and the sociotechnical aspects of data utilization in business contexts.
 
-  See the [coursebook](https://github.com/DrBenjamin/) by @Gross2021 for further reading on foundations in informatics.
+  See the [Technical Applications & Data Analytics coursebook](https://github.com/DrBenjamin/Data-Science-and-Data-Analytics/blob/66da3d5a65a1f57ab9ca5e35fd91df4077a7bad7/literature/Technical%20Applications%20%26%20Data%20Analytics.pdf/?raw=true) by @Gross2021 for further reading on foundations in informatics.
 
 * **Computer Science (algorithms, data structures, systems design):**
 
