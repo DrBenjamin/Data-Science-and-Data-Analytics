@@ -19,7 +19,7 @@ format:
     toc: true
     toc-expand: 5
     toc-depth: 5
-    number-sections: true
+    number-sections: false
     number-depth: 5
   pdf:
     keep-tex: false
@@ -88,7 +88,7 @@ Data analytics is the systematic process of examining data using statistical, co
 
 @Pochiraju2019
 
-For skills and competencies required for data science, see [Skills Landscape](./topics/Scope and Nature of Data Science/The data science skills landscape slides.pdf).
+For skills and competencies required for data science, see [Skills Landscape](./topics/Scope%20and%20Nature%20of%20Data%20Science/The%20data%20science%20skills%20landscape%20slides.pdf).
 
 ## Defining Data Science as an Academic Discipline
 
@@ -100,6 +100,8 @@ Data science draws from and interacts with multiple foundational disciplines:
 
   Informatics provides the foundational understanding of information processing, storage, and retrieval systems that underpin data science infrastructure. It encompasses database design, data modeling, information architecture, and system integration principles essential for managing large-scale data ecosystems. Information systems contribute knowledge about organizational data flows, enterprise architectures, and the sociotechnical aspects of data utilization in business contexts.
 
+  See the [coursebook](https://github.com/DrBenjamin/) by @Gross2021 for further reading on foundations in informatics.
+
 * **Computer Science (algorithms, data structures, systems design):**
 
   Computer science provides the computational foundation for data science through algorithm design, complexity analysis, and efficient data structures. Core contributions include machine learning algorithms, distributed computing paradigms, database systems, and software engineering practices. System design principles enable scalable data processing architectures, while computational thinking frameworks guide algorithmic problem-solving approaches essential for data-driven solutions.
@@ -109,9 +111,11 @@ Data science draws from and interacts with multiple foundational disciplines:
 * **Mathematics (linear algebra, calculus, optimization):**
 
   Mathematics provides the theoretical backbone for data science through linear algebra (matrix operations, eigenvalues, vector spaces), calculus (derivatives, gradients, optimization), and discrete mathematics (graph theory, combinatorics). These mathematical foundations enable dimensionality reduction techniques, gradient-based optimization algorithms, statistical modeling, and the rigorous formulation of machine learning problems. Mathematical rigor ensures the validity and interpretability of analytical results.
+
 * **Statistics & Econometrics (inference, modeling, causal analysis):**
 
   Statistics provides the methodological framework for data analysis through hypothesis testing, confidence intervals, regression analysis, and experimental design. Econometrics contributes advanced techniques for causal inference, time series analysis, and handling observational data challenges such as endogeneity and selection bias. These disciplines ensure rigorous uncertainty quantification, model validation, and the ability to draw reliable conclusions from data while understanding limitations and assumptions.
+
 * **Social Science & Behavioral Sciences (contextual interpretation, experimental design):**
 
   Social and behavioral sciences contribute essential understanding of human behavior, organizational dynamics, and contextual factors that influence data generation and interpretation. These disciplines provide expertise in experimental design, survey methodology, ethical considerations, and the social implications of data-driven decisions. They ensure that data science applications consider human factors, cultural context, and societal impact while maintaining ethical standards in data collection and analysis.
