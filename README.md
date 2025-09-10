@@ -2,6 +2,15 @@
 
 Course Data Science and Data Analytics in the Bachelor Studies International Business Management (B. A.) at the Hochschule Fresenius - University of Applied Sciences - International Business School in Cologne Germany.
 
+## Course Skills Summary
+
+For a comprehensive overview of the skills and competencies covered in this course, see:
+
+- **[Skills Summary](Skills_Summary.md)** - Detailed breakdown of all learning objectives and competencies
+- **[Skills Checklist](Skills_Checklist.md)** - Quick reference checklist for tracking progress
+
+These documents provide students with a clear roadmap of the technical, analytical, and business skills they will develop throughout the course.
+
 ## Setup Python Environment
 
 Setup the Python environment using `conda`:

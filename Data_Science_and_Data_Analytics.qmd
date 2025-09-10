@@ -58,6 +58,20 @@ execute:
 ---
 
 \clearpage
+# Course Skills Overview
+
+This course develops comprehensive competencies across six key areas:
+
+1. **Foundational Knowledge**: Understanding data science as an interdisciplinary field integrating mathematics, statistics, computer science, and domain expertise
+2. **Data Competencies**: Classification, collection, management, and evaluation of various data types and sources
+3. **Programming & Technical Skills**: Proficiency in R programming with tidyverse, Python integration, and development tools
+4. **Statistical & Analytical Methods**: Exploratory data analysis, advanced analytics, regression analysis, and causal inference
+5. **Business Applications**: Strategic decision-making, operational analytics, and project implementation in business environments
+6. **Communication & Project Management**: Structured presentation of results and effective stakeholder communication
+
+For detailed skills breakdown, see [Skills Summary](Skills_Summary.md) and [Skills Checklist](Skills_Checklist.md).
+
+\clearpage
 # Scope and Nature of Data Science
 
 Let's start this course with some definitions and context.
