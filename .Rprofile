@@ -1,19 +1,29 @@
-source("r-code/renv/activate.R")
-## Ensure renv uses the `r-code` folder as the project if a lockfile exists there.
-rcode_lock <- file.path("r-code", "renv.lock")
+# Setting renv configuration options BEFORE activating renv so they are
+# respected by the activation script.
+# Setting/Enabling pak support and locking behavior as requested.
+options(
+  "renv.config.pak.enabled" = TRUE,
+  "renv.config.locking.enabled" = TRUE
+)
+
+## Ensure renv uses the project root (`.`) as the project while allowing the
+## lockfile to remain in `r-code/renv.lock` if present. We set the environment
+## variables before activating renv so the activation script respects them.
+rcode_lock <- file.path("/Users/ben/Documents/Studies/Business Administration (M. A.)/Analytical Skills for Business/Projects/Analytical-Skills-for-Business/renv.lock")
 if (file.exists(rcode_lock)) {
-  # If not already set via .Renviron, set it now (normalised path)
-  if (!nzchar(Sys.getenv("RENV_PROJECT"))) Sys.setenv(RENV_PROJECT = normalizePath("r-code"))
+  # If not already set via .Renviron, set RENV_PROJECT to the project root and
+  # point RENV_PATHS_LOCKFILE to the lockfile inside project root.
+  if (!nzchar(Sys.getenv("RENV_PROJECT"))) Sys.setenv(RENV_PROJECT = normalizePath("/Users/ben/Documents/Studies/Business Administration (M. A.)/Analytical Skills for Business/Projects/Analytical-Skills-for-Business"))
   if (!nzchar(Sys.getenv("RENV_PATHS_LOCKFILE"))) Sys.setenv(RENV_PATHS_LOCKFILE = normalizePath(rcode_lock))
-  message("RENV_PROJECT set to r-code (lockfile detected)")
+  message("RENV_PROJECT set to project root; RENV_PATHS_LOCKFILE set to renv.lock (lockfile detected)")
 }
 
 ## Activate renv from the project root so project-local libraries are used.
-if (file.exists("r-code/renv/activate.R")) {
+if (file.exists("/Users/ben/Documents/Studies/Business Administration (M. A.)/Analytical Skills for Business/Projects/Analytical-Skills-for-Business/renv/activate.R")) {
   tryCatch({
     # source the activation script quietly; it is idempotent
-    source("r-code/renv/activate.R")
-  }, error = function(e) message("Failed to source r-code/renv/activate.R: ", e$message))
+    source("/Users/ben/Documents/Studies/Business Administration (M. A.)/Analytical Skills for Business/Projects/Analytical-Skills-for-Business/renv/activate.R")
+  }, error = function(e) message("Failed to source activate.R: ", e$message))
 } else {
   # fallback: attempt to activate via the renv package (if installed)
   if (requireNamespace("renv", quietly = TRUE)) {
@@ -80,9 +90,9 @@ if (interactive()) {
 }
 # --- End radian configuration ---
 
-# Setting project working directory to r-code for interactive sessions.
+# Setting project working directory to project root for interactive sessions.
 if (interactive()) {
-  target <- file.path(getwd(), "r-code")
+  target <- file.path(getwd(), "./")
   if (dir.exists(target)) {
     setwd(target)
   }

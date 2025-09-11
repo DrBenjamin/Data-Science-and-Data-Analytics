@@ -18,25 +18,28 @@ Setup the R environment using `renv`:
 
 ```bash
 # Installing renv
-Rscript -e 'install.packages("renv", repos="https://cloud.r-project.org"); renv::restore(lockfile = "r-code/renv.lock")'
+Rscript -e 'source(".Rprofile"); install.packages("renv", repos="https://cloud.r-project.org")'
+
+# Installing pak package
+Rscript --vanilla -e 'source(".Rprofile"); install.packages("pak", repos="https://cloud.r-project.org")'
 
 # Installing reticulate package
-Rscript -e 'install.packages("reticulate", repos="https://cloud.r-project.org")'
+Rscript -e 'source(".Rprofile"); install.packages("reticulate", repos="https://cloud.r-project.org")'
 
 # Installing rmarkdown package
-Rscript -e 'install.packages("rmarkdown", repos="https://cloud.r-project.org")'
+Rscript -e 'source(".Rprofile"); install.packages("rmarkdown", repos="https://cloud.r-project.org")'
 
 # Installing knitr package
-Rscript -e 'install.packages("knitr", repos="https://cloud.r-project.org")'
+Rscript -e 'source(".Rprofile"); install.packages("knitr", repos="https://cloud.r-project.org")'
 
 # Installing RefManageR package
-Rscript -e 'install.packages("RefManageR", repos="https://cloud.r-project.org")'
+Rscript -e 'source(".Rprofile"); install.packages("RefManageR", repos="https://cloud.r-project.org")'
 
 # Installing jsonlite package
-Rscript -e 'install.packages("jsonlite", repos="https://cloud.r-project.org")'
+Rscript -e 'source(".Rprofile"); install.packages("jsonlite", repos="https://cloud.r-project.org")'
 
 # Installing rlang package
-Rscript -e 'install.packages("rlang", repos="https://cloud.r-project.org")'
+Rscript -e 'source(".Rprofile"); install.packages("rlang", repos="https://cloud.r-project.org")'
 ```
 
 In the R console:
@@ -46,31 +49,47 @@ In the R console:
 R.home("bin")
 file.path(R.home("bin"), "R")
 R.version
+```
 
+check for the correct R version (4.5.0 or higher).
+
+```r
 # Installing renv package if not already installed
 install.packages('renv')
 
+# Checking renv installation
+renv::paths$library()
+renv::status()
+
+# Checking renv variable `proj_root`, `rcode_path` and `renv_activate`
+setwd("/Users/ben/Documents/Studies/International Business Management (B. A.)/Data Science and Data Analytics/Projects/Data-Science-and-Data-Analytics")
+proj_root <- getwd()
+rcode_path <- file.path(proj_root, "r-code")
+renv_activate <- file.path("/Users/ben/Documents/Studies/Business Administration (M. A.)/Analytical Skills for Business/Projects/Analytical-Skills-for-Business/renv/activate.R")
+renv::status()
+```
+
+Now set up the path in VS Code settings (see `settings.json`) for the `r.libPaths` variable.
+
+```r
 # Restoring the R environment from the lockfile
 renv::restore()
 
 # Snapshot the current state of the R environment
 renv::settings$snapshot.type("all")
 renv::snapshot(confirm = FALSE)
-
-# Installing needed packages
-install.packages(c("jsonlite", "rlang"))
 ```
 
 Update the project's `.Rprofile`:
 
 ```txt
-source("r-code/renv/activate.R")
+source("/Users/ben/Documents/Studies/Business Administration (M. A.)/Analytical Skills for Business/Projects/Analytical-Skills-for-Business/renv/activate.R")
 ```
 
 and create a `.Renviron` file in the project root with the following content:
 
 ```txt
-RENV_PROJECT=./r-code
+RENV_PROJECT="/Users/ben/Documents/Studies/Business Administration (M. A.)/Analytical Skills for Business/Projects/Analytical-Skills-for-Business/"
 ```
 
 ### Update R Environment
