@@ -88,7 +88,11 @@ Data analytics is the systematic process of examining data using statistical, co
 
 @Pochiraju2019
 
-For skills and competencies required for data science, see [Skills Landscape](./topics/Scope%20and%20Nature%20of%20Data%20Science/The%20data%20science%20skills%20landscape%20slides.pdf).
+There are many roles in the data science field, including (but not limited to):
+
+![**Source:** *LinkedIn*](./topics/Scope%20and%20Nature%20of%20Data%20Science/IMG_0120.png)
+
+For skills and competencies required for data science activities, see [Skills Landscape](./topics/Scope%20and%20Nature%20of%20Data%20Science/The%20data%20science%20skills%20landscape%20slides.pdf).
 
 ## Defining Data Science as an Academic Discipline
 
@@ -106,7 +110,9 @@ Data science draws from and interacts with multiple foundational disciplines:
 
   Computer science provides the computational foundation for data science through algorithm design, complexity analysis, and efficient data structures. Core contributions include machine learning algorithms, distributed computing paradigms, database systems, and software engineering practices. System design principles enable scalable data processing architectures, while computational thinking frameworks guide algorithmic problem-solving approaches essential for data-driven solutions.
 
-  See also: [Analytical Skills for Business - 1 Introduction](https://drbenjamin.github.io/analytical-skills.html#sec-intro).
+  See also: [Analytical Skills for Business - 1 Introduction](https://drbenjamin.github.io/analytical-skills.html#sec-intro) and take a look at the AI Universe overview graphic:
+
+  ![**Source:** *LinkedIn*](./topics/Scope%20and%20Nature%20of%20Data%20Science/IMG_0122.png)
 
 * **Mathematics (linear algebra, calculus, optimization):**
 
