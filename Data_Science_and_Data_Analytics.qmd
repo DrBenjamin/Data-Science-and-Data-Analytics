@@ -180,7 +180,6 @@ The significance of business data analysis for decision-making extends beyond te
 
 For comprehensive coverage of business data analysis methodologies and applications, see [Advanced Business Analytics](./topics/Scope%20and%20Nature%20of%20Data%20Science/Business%20Data%20Analysis/978-3-031-78070-7.pdf) and the analytical foundations outlined in @Evans2020.
 
-<!-- unfinished content
 ## Emerging Trends
 
 Key technological and methodological developments shaping the data landscape:
@@ -189,7 +188,9 @@ Key technological and methodological developments shaping the data landscape:
 * Digitalization of processes and platforms.
 * Artificial Intelligence (AI), Machine Learning (ML), and Deep Learning (DL).
 * Big Data ecosystems (volume, velocity, variety, veracity, value).
+  ![**Source:** *LinkedIn*](./topics/Scope%20and%20Nature%20of%20Data%20Science/Emerging%20Trends/Big_Data_5Vs.jpg)
 * Internet of Things (IoT) and sensor-driven data generation.
+  ![**Source:** *https://businesstech.bus.umich.edu/uncategorized/tech-101-internet-of-things/*](./topics/Scope%20and%20Nature%20of%20Data%20Science/Emerging%20Trends/iot2.png)
 * Cloud computing and elastic infrastructure.
 * Blockchain for distributed trust and data integrity.
 * Industry 4.0: cyber-physical systems and automation.
@@ -204,8 +205,9 @@ Key technological and methodological developments shaping the data landscape:
 \newpage
 # Data Analytic Competencies
 
-xy
+Data analytic competencies encompass the ability to apply machine learning, data mining, statistical methods, and algorithmic approaches to extract meaningful patterns, insights, and predictions from complex datasets. They include proficiency in exploratory data analysis, feature engineering, model selection, evaluation, and validation. These skills ensure rigorous interpretation of data, support evidence-based decision-making, and enable the development of robust analytical solutions adaptable to diverse health, social, and technological contexts.
 
+<!-- unfinished content
 ## Types of Data
 
 * Cross-sectional data
