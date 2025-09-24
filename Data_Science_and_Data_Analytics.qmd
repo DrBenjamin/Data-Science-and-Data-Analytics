@@ -128,6 +128,8 @@ Data science draws from and interacts with multiple foundational disciplines:
 
   Social and behavioral sciences contribute essential understanding of human behavior, organizational dynamics, and contextual factors that influence data generation and interpretation. These disciplines provide expertise in experimental design, survey methodology, ethical considerations, and the social implications of data-driven decisions. They ensure that data science applications consider human factors, cultural context, and societal impact while maintaining ethical standards in data collection and analysis.
 
+  ![**Source:** *LinkedIn*](topics/./Scope%20and%20Nature%20of%20Data%20Science/AI%20and%20culture.png)
+
 The interdisciplinary nature of data science requires practitioners to develop competencies across these domains while maintaining awareness of how different methodological traditions complement and inform each other. This multidisciplinary foundation enables data scientists to approach complex problems with both technical rigor and contextual understanding, ensuring that analytical solutions are both technically sound and practically relevant.
 
 For further reading on the academic foundations of data science, see the comprehensive analysis in [Defining Data Science as an Academic Discipline](./topics/Scope%20and%20Nature%20of%20Data%20Science/Defining%20Data%20Science%20as%20an%20Academic%20Discipline/482-1-945-1-10-20150421.pdf).
