@@ -188,9 +188,13 @@ Key technological and methodological developments shaping the data landscape:
 * Digitalization of processes and platforms.
 * Artificial Intelligence (AI), Machine Learning (ML), and Deep Learning (DL).
 * Big Data ecosystems (volume, velocity, variety, veracity, value).
+
   ![**Source:** *LinkedIn*](./topics/Scope%20and%20Nature%20of%20Data%20Science/Emerging%20Trends/Big_Data_5Vs.jpg)
+
 * Internet of Things (IoT) and sensor-driven data generation.
+
   ![**Source:** *https://businesstech.bus.umich.edu/uncategorized/tech-101-internet-of-things/*](./topics/Scope%20and%20Nature%20of%20Data%20Science/Emerging%20Trends/iot2.png)
+  
 * Cloud computing and elastic infrastructure.
 * Blockchain for distributed trust and data integrity.
 * Industry 4.0: cyber-physical systems and automation.
@@ -201,6 +205,8 @@ Key technological and methodological developments shaping the data landscape:
 * Descriptive Analytics: What happened?
 * Predictive Analytics: What is likely to happen?
 * Prescriptive Analytics: What should we do?
+
+![**Source:** *https://datamites.com/blog/descriptive-vs-predictive-vs-prescriptive-analytics/*](./topics/Scope%20and%20Nature%20of%20Data%20Science/Emerging%20Trends/analytics.jpg)
 
 \newpage
 # Data Analytic Competencies
