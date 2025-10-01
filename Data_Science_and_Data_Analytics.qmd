@@ -217,11 +217,19 @@ Data analytic competencies encompass the ability to apply machine learning, data
 
 ## Types of Data
 
-* Cross-sectional data
-* Panel (longitudinal) data
-* Time-series data
+The structure and temporal dimension of data fundamentally influence analytical approaches and statistical methods. Understanding data types enables researchers to select appropriate modeling techniques and interpret results within proper contextual boundaries.
+
+**Cross-sectional data** captures observations of multiple entities (individuals, firms, countries) at a single point in time. This structure facilitates comparative analysis across units but does not track changes over time. Cross-sectional studies are particularly valuable for examining relationships between variables at a specific moment and testing hypotheses about population characteristics.
+
+**Time-series data** records observations of a single entity across multiple time points, enabling the analysis of temporal patterns, trends, seasonality, and cyclical behaviors. Time-series methods account for autocorrelation and temporal dependencies, supporting forecasting and dynamic modeling. This data structure is essential for economic indicators, financial markets, and environmental monitoring.
+
+**Panel (longitudinal) data** combines both dimensions, tracking multiple entities over time. This structure offers substantial analytical advantages by controlling for unobserved heterogeneity across entities and modeling both within-entity and between-entity variation. Panel data methods support causal inference through fixed-effects and random-effects models, difference-in-differences estimation, and dynamic panel specifications.
+
+For further distinctions between these data structures and their analytical implications, see [How to Distinguish Cross-Section Data, Time-Series Data, and Panel Data](https://kandadata.com/how-to-distinguish-cross-section-data-time-series-data-and-panel-data/).
 
 [**Source:** *https://static.vecteezy.com*](topics/Data%20Analytic%20Competencies/Types%20of%20Data/types%20of%20data.jpg)
+
+**Additional data structures:**
 
 * Geo-referenced / spatial data
 * Streaming / real-time data
