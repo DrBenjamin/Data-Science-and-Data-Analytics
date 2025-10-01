@@ -243,7 +243,7 @@ The structure and temporal dimension of data fundamentally influence analytical 
 * **Categorical (nominal / binary)** data represents distinct categories without any inherent order. Nominal variables have two or more categories (e.g., gender, race, or marital status), while binary variables have only two categories (e.g., yes/no, success/failure). Categorical variables can be analyzed using chi-square tests or logistic regression.
 * **Compositional or hierarchical structures** represent data with a part-to-whole relationship or nested categories. Examples include demographic data (e.g., age groups within gender) and geographical data (e.g., countries within continents). Compositional data can be analyzed using techniques such as hierarchical clustering or multilevel modeling.
 
-![**Source:** *https://www.collegedisha.com/*](topics/Data%20Analytic%20Competencies/Types%20of%20Data/Types_of_Data.webp)
+![**Source:** *https://www.collegedisha.com/*](topics/Data%20Analytic%20Competencies/Types%20of%20Data/Types_of_Data.png)
 
 ## Conceptual Framework: Knowledge & Understanding of Data
 
