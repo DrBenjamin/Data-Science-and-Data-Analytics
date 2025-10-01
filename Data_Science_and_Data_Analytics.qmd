@@ -215,14 +215,16 @@ Key technological and methodological developments shaping the data landscape:
 
 Data analytic competencies encompass the ability to apply machine learning, data mining, statistical methods, and algorithmic approaches to extract meaningful patterns, insights, and predictions from complex datasets. They include proficiency in exploratory data analysis, feature engineering, model selection, evaluation, and validation. These skills ensure rigorous interpretation of data, support evidence-based decision-making, and enable the development of robust analytical solutions adaptable to diverse health, social, and technological contexts.
 
-<!-- unfinished content
 ## Types of Data
 
 * Cross-sectional data
 * Panel (longitudinal) data
 * Time-series data
+
+[**Source:** *https://static.vecteezy.com*](topics/Data%20Analytic%20Competencies/Types%20of%20Data/types%20of%20data.jpg)
+
 * Geo-referenced / spatial data
-* (Potentially) streaming / real-time data
+* Streaming / real-time data
 
 ## Types of Variables
 
@@ -237,7 +239,6 @@ Data analytic competencies encompass the ability to apply machine learning, data
 * Clarify analytical purpose and domain context.
 * Define entities, observational units, and identifiers.
 * Align business concepts with data structures.
--->
 
 ## Data Collection
 
