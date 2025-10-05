@@ -275,7 +275,6 @@ Modern data collection operates within an increasingly complex ecosystem charact
 
 *For comprehensive coverage of data collection methodologies and best practices, refer to: [Research Methodology - Data Collection](https://researchmethodology.org/data-collection/)*
 
-<!-- unfinished content
 ## Data Management
 
 * Organize: schema design, naming conventions.
@@ -297,7 +296,6 @@ Modern data collection operates within an increasingly complex ecosystem charact
 
 Please read the [How to Use R for Data Science](https://hubchev.github.io/ds/) by Prof. Dr. Huber for any basic questions regarding R programming.
 
-<!-- unfinished content
 ## Core tidyverse Tooling
 
 Fundamental packages:
