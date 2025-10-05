@@ -287,11 +287,21 @@ Data Management in data science curricula requires a coherent, multi‑facet fra
 
 ## Data Evaluation
 
-* Plan analyses aligned with objectives and stakeholders.
-* Conduct exploratory, inferential, and predictive procedures appropriately.
-* Evaluate robustness, reliability, and validity.
-* Assess limitations, bias, and ethical impact.
--->
+* Define data quality dimensions and assessment frameworks.
+* Distinguish validation from verification in data pipelines.
+* Apply statistical methods and data profiling for evaluation.
+* Balance automated and manual (human-in-the-loop) evaluation approaches.
+* Implement tools, workflows, and governance for data evaluation.
+
+Data evaluation is a critical competency in data science that ensures datasets are fit-for-purpose, reliable, and trustworthy throughout the analytical lifecycle. Effective data evaluation encompasses systematic assessment of data quality dimensions (completeness, accuracy, consistency, validity, timeliness, and uniqueness), rigorous validation and verification processes within data pipelines, and the strategic application of statistical methods and data profiling techniques. Data quality dimensions provide measurable criteria and benchmarks to determine whether data meets requirements for downstream analysis and decision-making (Weiskopf &amp; Weng, 2013; Lee et al., 2018; Collibra, 2022). Assessment frameworks translate these abstract dimensions into actionable metrics and evaluation workflows, enabling both objective measurement and contextual interpretation.
+
+The distinction between data validation and data verification is essential for maintaining data integrity across analytical pipelines. Validation checks occur at entry or ingestion points, preventing bad data from entering systems through constraint checks, format validation, and business rule enforcement. Verification, in contrast, involves post-collection checks ensuring data remained accurate and consistent over time and across system boundaries, supporting reproducibility and traceability (Precisely, n.d.). Both processes are complementary: validation acts as a gatekeeper, while verification provides ongoing assurance that data quality has not degraded through processing, transformation, or storage.
+
+Statistical methods and data profiling form the technical foundation for data evaluation. Outlier detection techniques (z-score, IQR, DBSCAN) identify anomalous observations that may represent errors or novel phenomena requiring investigation. Distribution checks assess whether data conforms to expected patterns, while data profiling describes dataset structure, missingness patterns, and statistical properties. Regression analysis and hypothesis testing can diagnose data quality issues and quantify relationships between quality metrics and analytical outcomes. Integrating profiling with quality dimensions enables targeted improvements and prioritization of data quality initiatives (ActivityInfo, 2023).
+
+Modern data evaluation requires balancing automated and manual approaches. Automated evaluation offers speed, scalability, and consistency for large datasets, enabling continuous monitoring and real-time quality checks. Rule-based validation, statistical profiling, and machine learning-based anomaly detection can process millions of records efficiently. However, manual evaluation contributes domain expertise, contextual understanding, and interpretative judgment that automated systems cannot replicate. Human-in-the-loop approaches combine automation's efficiency with human interpretability, particularly valuable for nuanced or high-stakes data where context matters (Lee et al., 2018). Hybrid workflows might automate initial screening while flagging edge cases for expert review, optimizing both throughput and quality.
+
+Tools, workflows, and governance frameworks provide the infrastructure for systematic data evaluation across the data lifecycle. Data profiling tools (e.g., Pandas Profiling, Great Expectations, Deequ) automate quality assessment and generate summary reports. Validation frameworks embed checks into ETL/ELT pipelines, ensuring quality gates at critical processing stages. Data lineage tracking and metadata management support traceability and impact analysis, documenting data provenance and transformation history. Governance frameworks establish roles, responsibilities, and processes for data quality management, aligning evaluation practices with regulatory requirements and reproducibility needs. Together, these elements create a comprehensive ecosystem for maintaining data quality, supporting both exploratory research and production analytics (Weiskopf &amp; Weng, 2013; Collibra, 2022).
 
 \newpage
 # Applications in the Programming Language R
