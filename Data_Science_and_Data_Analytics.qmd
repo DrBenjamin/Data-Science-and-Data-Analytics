@@ -259,7 +259,7 @@ ordered_data <- continuous_data %>%
   arrange(Height_cm)
 
 # Displaying the ordered data frame
-cat(ordered_data)
+print(ordered_data)
 
 # Practicing:
 # 1. Assign continuous data to a data frame and displaying it as a table
