@@ -306,7 +306,7 @@ print(categorical_data)
 
 * **Compositional or hierarchical structures** represent data with a part-to-whole relationship or nested categories. Examples include demographic data (e.g., age groups within gender) and geographical data (e.g., countries within continents). Compositional data can be analyzed using techniques such as hierarchical clustering or multilevel modeling.
 
-```{r r_categorical, results='asis', echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+```{r r_compositional, results='asis', echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Assigning hierarchical data to a data frame and displaying it as a table
 hierarchical_data <- data.frame(
   Country = c("USA", "USA", "Canada", "Canada", "Mexico"),
