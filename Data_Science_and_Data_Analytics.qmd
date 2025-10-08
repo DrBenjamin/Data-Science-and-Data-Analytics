@@ -118,7 +118,9 @@ Data science draws from and interacts with multiple foundational disciplines:
 
 * **Mathematics (linear algebra, calculus, optimization):**
 
-  Mathematics provides the theoretical backbone for data science through linear algebra (matrix operations, eigenvalues, vector spaces), calculus (derivatives, gradients, optimization), and discrete mathematics (graph theory, combinatorics). These mathematical foundations enable dimensionality reduction techniques, gradient-based optimization algorithms, statistical modeling, and the rigorous formulation of machine learning problems. Mathematical rigor ensures the validity and interpretability of analytical results.
+  Mathematics provides the theoretical backbone for data science through linear algebra (matrix operations, eigenvalues, vector spaces), calculus (derivatives, gradients, optimization), and discrete mathematics (graph theory, combinatorics). These mathematical foundations enable dimensionality reduction techniques, gradient-based optimization algorithms, statistical modeling, and the rigorous formulation of **machine learning problems** (see the figure below). Mathematical rigor ensures the validity and interpretability of analytical results.
+
+  ![**Source:** *LinkedIn*](./topics/Scope%20and%20Nature%20of%20Data%20Science/AI_Models.png)
 
 * **Statistics & Econometrics (inference, modeling, causal analysis):**
 
@@ -238,6 +240,32 @@ The structure and temporal dimension of data fundamentally influence analytical 
 ## Types of Variables
 
 * **Continuous (interval/ratio)** data is measured on a scale with meaningful intervals and a true zero point (ratio) or arbitrary zero point (interval). Examples include height, weight, temperature, and income. Continuous variables support a wide range of statistical analyses, including regression and correlation.
+
+```{r r_continuous, results='asis', echo=FALSE, warning=FALSE}
+# Loading the dplyr library for data manipulation
+library(dplyr)
+
+# Assigning continuous data to a data frame and displaying it as a table
+continuous_data <- data.frame(
+  Height_cm = c(170, 165, 180, 175, 160, 185, 172, 168, 178, 182),
+  Weight_kg = c(70, 60, 80, 75, 55, 90, 68, 62, 78, 85)
+)
+
+# Showing the table
+print(continuous_data)
+
+# Ordering the data frame by Height_cm
+ordered_data <- continuous_data %>% 
+  arrange(Height_cm)
+
+# Displaying the ordered data frame
+print(ordered_data)
+
+# Practicing:
+# 1. Assign continuous data to a data frame and displaying it as a table
+# 2. Order the data frame by a specific column
+```
+
 * **Count** data represents the number of occurrences of an event or the frequency of a particular characteristic. Count variables are typically non-negative integers and can be analyzed using Poisson regression or negative binomial regression.
 * **Ordinal** data represents categories with a meaningful order or ranking but no consistent interval between categories. Examples include survey responses (e.g., Likert scales) and socioeconomic status (e.g., low, medium, high). Ordinal variables can be analyzed using non-parametric tests or ordinal regression.
 * **Categorical (nominal / binary)** data represents distinct categories without any inherent order. Nominal variables have two or more categories (e.g., gender, race, or marital status), while binary variables have only two categories (e.g., yes/no, success/failure). Categorical variables can be analyzed using chi-square tests or logistic regression.
