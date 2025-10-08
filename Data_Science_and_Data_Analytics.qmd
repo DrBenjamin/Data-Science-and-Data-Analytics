@@ -241,7 +241,7 @@ The structure and temporal dimension of data fundamentally influence analytical 
 
 * **Continuous (interval/ratio)** data is measured on a scale with meaningful intervals and a true zero point (ratio) or arbitrary zero point (interval). Examples include height, weight, temperature, and income. Continuous variables support a wide range of statistical analyses, including regression and correlation.
 
-```{r r_continuous, results='asis', echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+```{r r_continuous, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading the dplyr library for data manipulation
 library(dplyr)
 
@@ -259,7 +259,7 @@ ordered_data <- continuous_data %>%
   arrange(Height_cm)
 
 # Displaying the ordered data frame
-print(ordered_data)
+cat(ordered_data)
 
 # Practicing:
 # 1. Assign continuous data to a data frame and displaying it as a table
@@ -268,7 +268,7 @@ print(ordered_data)
 
 * **Count** data represents the number of occurrences of an event or the frequency of a particular characteristic. Count variables are typically non-negative integers and can be analyzed using Poisson regression or negative binomial regression.
 
-```{r r_count, results='asis', echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+```{r r_count, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Assigning count data to a data frame and displaying it as a table
 count_data <- data.frame(
   Event = c("A", "B", "C", "D", "E"),
@@ -277,10 +277,13 @@ count_data <- data.frame(
 
 # Showing the table
 print(count_data)
+
+# Practicing:
+# 1. Assign count data to a data frame and displaying it as a table
 ```
 * **Ordinal** data represents categories with a meaningful order or ranking but no consistent interval between categories. Examples include survey responses (e.g., Likert scales) and socioeconomic status (e.g., low, medium, high). Ordinal variables can be analyzed using non-parametric tests or ordinal regression.
 
-```{r r_ordinal, results='asis', echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+```{r r_ordinal, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Assigning ordinal data to a data frame and displaying it as a table
 ordinal_data <- data.frame(
   Response = c("Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"),
@@ -289,11 +292,14 @@ ordinal_data <- data.frame(
 
 # Showing the table
 print(ordinal_data)
+
+# Practicing:
+# 1. Assign ordinal data to a data frame and displaying it as a table^
 ```
 
 * **Categorical (nominal / binary)** data represents distinct categories without any inherent order. Nominal variables have two or more categories (e.g., gender, race, or marital status), while binary variables have only two categories (e.g., yes/no, success/failure). Categorical variables can be analyzed using chi-square tests or logistic regression.
 
-```{r r_categorical, results='asis', echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+```{r r_categorical, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Assigning categorical data to a data frame and displaying it as a table
 categorical_data <- data.frame(
   Event = c("A", "B", "C", "D", "E"),
@@ -302,11 +308,14 @@ categorical_data <- data.frame(
 
 # Showing the table
 print(categorical_data)
+
+# Practicing:
+# 1. Assign categorical data to a data frame and displaying it as a table
 ```
 
 * **Compositional or hierarchical structures** represent data with a part-to-whole relationship or nested categories. Examples include demographic data (e.g., age groups within gender) and geographical data (e.g., countries within continents). Compositional data can be analyzed using techniques such as hierarchical clustering or multilevel modeling.
 
-```{r r_compositional, results='asis', echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+```{r r_compositional, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Assigning hierarchical data to a data frame and displaying it as a table
 hierarchical_data <- data.frame(
   Country = c("USA", "USA", "Canada", "Canada", "Mexico"),
@@ -315,7 +324,10 @@ hierarchical_data <- data.frame(
 )
 
 # Showing the table
-print(hierarchical_data)
+cat(hierarchical_data)
+
+# Practicing:
+# 1. Assign hierarchical data to a data frame and displaying it as a table
 ```
 
 ![**Source:** *https://www.collegedisha.com/*](topics/Data%20Analytic%20Competencies/Types%20of%20Data/Types_of_Data.png)
