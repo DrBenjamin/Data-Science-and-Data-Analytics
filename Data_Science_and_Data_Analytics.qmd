@@ -285,6 +285,9 @@ print(count_data)
 * **Ordinal** data represents categories with a meaningful order or ranking but no consistent interval between categories. Examples include survey responses (e.g., Likert scales) and socioeconomic status (e.g., low, medium, high). Ordinal variables can be analyzed using non-parametric tests or ordinal regression.
 
 ```{r r_ordinal, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading the dplyr library for data manipulation
+library(dplyr)
+
 # Assigning ordinal data to a data frame and displaying it as a table
 ordinal_data <- data.frame(
   Response = c("Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"),
@@ -309,6 +312,9 @@ print(ordinal_data)
 * **Categorical (nominal / binary)** data represents distinct categories without any inherent order. Nominal variables have two or more categories (e.g., gender, race, or marital status), while binary variables have only two categories (e.g., yes/no, success/failure). Categorical variables can be analyzed using chi-square tests or logistic regression.
 
 ```{r r_categorical, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading the dplyr library for data manipulation
+library(dplyr)
+
 # Assigning categorical data to a data frame and displaying it as a table
 categorical_data <- data.frame(
   Event = c("A", "C", "B", "D", "E"),
@@ -333,6 +339,9 @@ print(categorical_data)
 * **Compositional or hierarchical structures** represent data with a part-to-whole relationship or nested categories. Examples include demographic data (e.g., age groups within gender) and geographical data (e.g., countries within continents). Compositional data can be analyzed using techniques such as hierarchical clustering or multilevel modeling.
 
 ```{r r_compositional, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading the dplyr library for data manipulation
+library(dplyr)
+
 # Assigning hierarchical data to a data frame and displaying it as a table
 hierarchical_data <- data.frame(
   Country = c("USA", "Canada" , "USA", "Canada", "Mexico"),
