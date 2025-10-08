@@ -241,7 +241,7 @@ The structure and temporal dimension of data fundamentally influence analytical 
 
 * **Continuous (interval/ratio)** data is measured on a scale with meaningful intervals and a true zero point (ratio) or arbitrary zero point (interval). Examples include height, weight, temperature, and income. Continuous variables support a wide range of statistical analyses, including regression and correlation.
 
-```{r r_continuous, results='asis', echo=FALSE, warning=FALSE}
+```{r r_continuous, results='asis', echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading the dplyr library for data manipulation
 library(dplyr)
 
@@ -267,9 +267,56 @@ print(ordered_data)
 ```
 
 * **Count** data represents the number of occurrences of an event or the frequency of a particular characteristic. Count variables are typically non-negative integers and can be analyzed using Poisson regression or negative binomial regression.
+
+```{r r_count, results='asis', echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Assigning count data to a data frame and displaying it as a table
+count_data <- data.frame(
+  Event = c("A", "B", "C", "D", "E"),
+  Frequency = c(5, 10, 3, 8, 12)
+)
+
+# Showing the table
+print(count_data)
+```
 * **Ordinal** data represents categories with a meaningful order or ranking but no consistent interval between categories. Examples include survey responses (e.g., Likert scales) and socioeconomic status (e.g., low, medium, high). Ordinal variables can be analyzed using non-parametric tests or ordinal regression.
+
+```{r r_ordinal, results='asis', echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Assigning ordinal data to a data frame and displaying it as a table
+ordinal_data <- data.frame(
+  Response = c("Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"),
+  Value = c(1, 2, 3, 4, 5)
+)
+
+# Showing the table
+print(ordinal_data)
+```
+
 * **Categorical (nominal / binary)** data represents distinct categories without any inherent order. Nominal variables have two or more categories (e.g., gender, race, or marital status), while binary variables have only two categories (e.g., yes/no, success/failure). Categorical variables can be analyzed using chi-square tests or logistic regression.
+
+```{r r_categorical, results='asis', echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Assigning categorical data to a data frame and displaying it as a table
+categorical_data <- data.frame(
+  Event = c("A", "B", "C", "D", "E"),
+  Category = c("Type1", "Type2", "Type1", "Type3", "Type2")
+)
+
+# Showing the table
+print(categorical_data)
+```
+
 * **Compositional or hierarchical structures** represent data with a part-to-whole relationship or nested categories. Examples include demographic data (e.g., age groups within gender) and geographical data (e.g., countries within continents). Compositional data can be analyzed using techniques such as hierarchical clustering or multilevel modeling.
+
+```{r r_categorical, results='asis', echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Assigning hierarchical data to a data frame and displaying it as a table
+hierarchical_data <- data.frame(
+  Country = c("USA", "USA", "Canada", "Canada", "Mexico"),
+  State_Province = c("California", "Texas", "Ontario", "Quebec", "Jalisco"),
+  Population_Millions = c(39.5, 29.0, 14.5, 8.5, 8.3)
+)
+
+# Showing the table
+print(hierarchical_data)
+```
 
 ![**Source:** *https://www.collegedisha.com/*](topics/Data%20Analytic%20Competencies/Types%20of%20Data/Types_of_Data.png)
 
