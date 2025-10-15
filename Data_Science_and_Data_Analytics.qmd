@@ -366,6 +366,25 @@ print(hierarchical_data)
 
 ![**Source:** *https://www.collegedisha.com/*](topics/Data%20Analytic%20Competencies/Types%20of%20Data/Types_of_Data.png)
 
+**Some small datasets to start with:**
+
+```{r r_packages_1, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
+# Installing devtools
+install_packages("devtools")
+library(devtools)
+
+# Installing Github R packages
+install_github("DrBenjamin/ourdata")
+```
+
+```{r r_packages_2, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading package
+library(ourdata)
+
+# Opening help of package
+??ourdata
+```
+
 ## Conceptual Framework: Knowledge & Understanding of Data
 
 * **Clarify analytical purpose and domain context** to guide data selection and interpretation.
