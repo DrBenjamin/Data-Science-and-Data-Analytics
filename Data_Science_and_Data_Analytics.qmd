@@ -370,7 +370,7 @@ print(hierarchical_data)
 
 ```{r r_packages_1, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
 # Installing devtools
-install_packages("devtools")
+install.packages("devtools")
 library(devtools)
 
 # Installing Github R packages
