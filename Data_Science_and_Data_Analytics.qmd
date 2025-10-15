@@ -377,7 +377,7 @@ library(devtools)
 install_github("DrBenjamin/ourdata")
 ```
 
-```{r r_packages_2, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+```{r r_packages_2, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
 # Loading package
 library(ourdata)
 
