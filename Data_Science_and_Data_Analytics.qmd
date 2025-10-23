@@ -641,7 +641,7 @@ print(kirche)
 help(combine)
 
 # Using the `combine` function from the `ourdata` R package to combine two vectors into a data frame
-combine(kirche$Jahr, koelsch$Jahr, kirche$Austritte, koelsch$Koelsch)
+ourdata::combine(kirche$Jahr, koelsch$Jahr, kirche$Austritte, koelsch$Koelsch)
 ```
 
 ** A messy dataset example**
@@ -666,7 +666,7 @@ preventable_deaths <- oecd_preventable
 
 First we explore the data:
 
-```{r oecd_data_exp, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+```{r oecd_data_exp, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
 # Viewing structure of the dataset
 str(preventable_deaths)
 
@@ -731,7 +731,6 @@ Showing some basic statistics of the cleaned data:
 library(dplyr)
 
 # Printing overall statistics
-cat("\n=== OVERALL STATISTICS ===\n")
 cat("Mean death rate:", mean(df_clean$death_rate, na.rm = TRUE), "\n")
 cat("Median death rate:", median(df_clean$death_rate, na.rm = TRUE), "\n")
 cat("Standard deviation:", sd(df_clean$death_rate, na.rm = TRUE), "\n")
@@ -766,7 +765,7 @@ print(year_stats)
 
 To visualize the cleaned data, we can create a distribution plot of preventable death rates:
 
-```{r oecd_data_viz, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
+```{r oecd_data_viz, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary library
 library(ggplot2)
 
