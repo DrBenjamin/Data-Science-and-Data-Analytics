@@ -617,12 +617,8 @@ print(hierarchical_data_grouped)
 A custom R package `ourdata` has been created to provide some small datasets (and also some helper R functions) for practice. You can install it from GitHub using the following commands:
 
 ```{r r_package_inst, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
-# Installing devtools
-install.packages("devtools")
-library(devtools)
-
 # Installing Github R packages
-install_github("DrBenjamin/ourdata")
+devtools::install_github("DrBenjamin/ourdata")
 ```
 
 Using the package and exploring its documentation:
