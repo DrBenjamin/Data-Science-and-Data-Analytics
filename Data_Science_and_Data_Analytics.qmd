@@ -612,9 +612,11 @@ print(hierarchical_data_grouped)
 ![**Source:**
 *https://www.collegedisha.com/*](./topics/Data%20Analytic%20Competencies/Types%20of%20Data/Types_of_Data.png)
 
-**Some small datasets to start with:**
+**Some small datasets to start with**
 
-```{r r_packages_1, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
+A custom R package `ourdata` has been created to provide some small datasets (and also some helper R functions) for practice. You can install it from GitHub using the following commands:
+
+```{r r_package_inst, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
 # Installing devtools
 install.packages("devtools")
 library(devtools)
@@ -623,12 +625,157 @@ library(devtools)
 install_github("DrBenjamin/ourdata")
 ```
 
-```{r r_packages_2, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
+Using the package and exploring its documentation:
+
+```{r r_packages_use, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
 # Loading package
 library(ourdata)
 
 # Opening help of package
 ??ourdata
+
+# Showing welcome message
+ourdata()
+
+# Printing some datasets
+print(koelsch)
+print(kirche)
+
+# Using help function from the package for a specific function from the `ourdata` R package
+help(combine)
+
+# Using the `combine` function from the `ourdata` R package to combine two vectors into a data frame
+combine(kirche$Jahr, koelsch$Jahr, kirche$Austritte, koelsch$Koelsch)
+```
+
+** A messy dataset example**
+
+We collect [data](https://data-explorer.oecd.org/vis?lc=en&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_HEALTH_STAT%40DF_AM&df[ag]=OECD.ELS.HD&dq=AUS%2BAUT%2BBEL%2BCAN%2BCHL%2BCOL%2BCRI%2BCZE%2BDNK%2BEST%2BFIN%2BFRA%2BDEU%2BGRC%2BHUN%2BISL%2BIRL%2BISR%2BITA%2BJPN%2BKOR%2BLVA%2BLTU%2BLUX%2BMEX%2BNLD%2BNZL%2BNOR%2BPOL%2BPRT%2BSVK%2BSVN%2BESP%2BSWE%2BCHE%2BTUR%2BGBR%2BUSA%2BARG%2BBRA%2BBGR%2BHRV%2BPER%2BROU%2BZAF%2BTHA.A.PREVM%2BTRTM.DT_10P5HB.._T...STANDARD....&pd=2010%2C2023&to[TIME_PERIOD]=false) from OECD (Organization for Economic Co-operation and Development), an international organization that works to build better policies for better lives. The dataset shows many columns (variables) with non-informative data and needs to be cleaned (wrangled) before analysis:
+
+```{r oecd_data, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
+# Loading necessary library
+library(tidyverse)
+
+# Reading the dataset
+preventable_deaths <- read.csv(
+  "./topics/data/OECD_Preventable_Deaths.csv",
+  stringsAsFactors = FALSE
+)
+```
+
+First we explore the data:
+
+```{r oecd_data_exp, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
+# Viewing structure of the dataset
+str(preventable_deaths)
+
+# Viewing first few rows
+head(preventable_deaths)
+
+# Checking dimensions
+dim(preventable_deaths)
+
+# Viewing column names
+colnames(preventable_deaths)
+
+# Summary statistics
+summary(preventable_deaths)
+
+# Checking for missing values
+colSums(is.na(preventable_deaths))
+```
+
+Now we can start cleaning the data by removing non-informative columns and rows with missing values:
+
+```{r oecd_data_clean, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
+# Selecting relevant columns for analysis
+df_clean <- preventable_deaths %>%
+  select(
+    REF_AREA,
+    Reference.area,
+    TIME_PERIOD,
+    OBS_VALUE
+  ) %>%
+  rename(
+    country_code = REF_AREA,
+    country = Reference.area,
+    year = TIME_PERIOD,
+    death_rate = OBS_VALUE
+  )
+
+# Converting year to numeric
+df_clean$year <- as.numeric(df_clean$year)
+
+# Converting death_rate to numeric (handling empty strings)
+df_clean$death_rate <- as.numeric(df_clean$death_rate)
+
+# Removing rows with missing death rates
+df_clean <- df_clean %>%
+  filter(!is.na(death_rate))
+
+# Viewing cleaned data structure
+str(df_clean)
+
+# Summary of cleaned data
+summary(df_clean)
+```
+
+Showing some basic statistics of the cleaned data:
+
+```{r oecd_data_stats, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
+# Printing overall statistics
+cat("\n=== OVERALL STATISTICS ===\n")
+cat("Mean death rate:", mean(df_clean$death_rate, na.rm = TRUE), "\n")
+cat("Median death rate:", median(df_clean$death_rate, na.rm = TRUE), "\n")
+cat("Standard deviation:", sd(df_clean$death_rate, na.rm = TRUE), "\n")
+cat("Min death rate:", min(df_clean$death_rate, na.rm = TRUE), "\n")
+cat("Max death rate:", max(df_clean$death_rate, na.rm = TRUE), "\n")
+
+# Printing statistics by country
+country_stats <- df_clean %>%
+  group_by(country) %>%
+  summarise(
+    mean_rate = mean(death_rate, na.rm = TRUE),
+    median_rate = median(death_rate, na.rm = TRUE),
+    sd_rate = sd(death_rate, na.rm = TRUE),
+    min_rate = min(death_rate, na.rm = TRUE),
+    max_rate = max(death_rate, na.rm = TRUE),
+    n_observations = n()
+  ) %>%
+  arrange(desc(mean_rate))
+print(country_stats)
+
+# Printing statistics by year
+year_stats <- df_clean %>%
+  group_by(year) %>%
+  summarise(
+    mean_rate = mean(death_rate, na.rm = TRUE),
+    median_rate = median(death_rate, na.rm = TRUE),
+    n_countries = n_distinct(country)
+  ) %>%
+  arrange(year)
+print(year_stats)
+```
+
+To visualize the cleaned data, we can create a distribution plot of preventable death rates:
+
+```{r oecd_data_viz, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
+# Loading necessary library
+library(ggplot2)
+
+# Plotting distribution of death rates
+ggplot(df_clean, aes(x = death_rate)) +
+  geom_histogram(bins = 30, fill = "#9B59B6", color = "white", alpha = 0.8) +
+  labs(
+    title = "Distribution of Preventable Death Rates",
+    x = "Death Rate per 100,000",
+    y = "Frequency",
+    caption = "Source: OECD Health Statistics"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14)
+  )
 ```
 
 ## Conceptual Framework: Knowledge & Understanding of Data

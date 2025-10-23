@@ -11,13 +11,11 @@ library(ggplot2)
 library(dplyr)
 library(tidyr)
 
-
-# Setting working directory to project root
-setwd("/Users/ben/Documents/Studies/International Business Management (B. A.)/Data Science and Data Analytics/Projects/Data-Science-and-Data-Analytics")
-
 # Reading the dataset
-preventable_deaths <- read.csv("data/OECD_Preventable_Deaths.csv", 
-                                stringsAsFactors = FALSE)
+preventable_deaths <- read.csv(
+  "./topics/data/OECD_Preventable_Deaths.csv",
+  stringsAsFactors = FALSE
+)
 
 # ============================================================================
 # 1. DATA EXPLORATION
@@ -48,17 +46,17 @@ colSums(is.na(preventable_deaths))
 
 # Selecting relevant columns for analysis
 df_clean <- preventable_deaths %>%
-  select(REF_AREA, Reference.area, TIME_PERIOD, OBS_VALUE, 
-         MEASURE, Measure, UNIT_MEASURE, Unit.of.measure,
-         SEX, Sex, AGE, Age) %>%
+  select(
+    REF_AREA,
+    Reference.area,
+    TIME_PERIOD,
+    OBS_VALUE
+  ) %>%
   rename(
     country_code = REF_AREA,
     country = Reference.area,
     year = TIME_PERIOD,
-    death_rate = OBS_VALUE,
-    measure_type = Measure,
-    sex = Sex,
-    age_group = Age
+    death_rate = OBS_VALUE
   )
 
 # Converting year to numeric
@@ -102,7 +100,6 @@ country_stats <- df_clean %>%
     n_observations = n()
   ) %>%
   arrange(desc(mean_rate))
-
 print(country_stats)
 
 # Statistics by year
@@ -114,7 +111,6 @@ year_stats <- df_clean %>%
     n_countries = n_distinct(country)
   ) %>%
   arrange(year)
-
 print(year_stats)
 
 
