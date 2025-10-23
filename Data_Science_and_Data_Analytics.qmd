@@ -616,7 +616,7 @@ print(hierarchical_data_grouped)
 
 A custom R package `ourdata` has been created to provide some small datasets (and also some helper R functions) for practice. You can install it from GitHub using the following commands:
 
-```{r r_package_inst, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
+```{r r_package_inst, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Installing devtools
 install.packages("devtools")
 library(devtools)
@@ -627,7 +627,7 @@ install_github("DrBenjamin/ourdata")
 
 Using the package and exploring its documentation:
 
-```{r r_packages_use, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
+```{r r_packages_use, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading package
 library(ourdata)
 
@@ -652,7 +652,7 @@ combine(kirche$Jahr, koelsch$Jahr, kirche$Austritte, koelsch$Koelsch)
 
 We collect [data](https://data-explorer.oecd.org/vis?lc=en&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_HEALTH_STAT%40DF_AM&df[ag]=OECD.ELS.HD&dq=AUS%2BAUT%2BBEL%2BCAN%2BCHL%2BCOL%2BCRI%2BCZE%2BDNK%2BEST%2BFIN%2BFRA%2BDEU%2BGRC%2BHUN%2BISL%2BIRL%2BISR%2BITA%2BJPN%2BKOR%2BLVA%2BLTU%2BLUX%2BMEX%2BNLD%2BNZL%2BNOR%2BPOL%2BPRT%2BSVK%2BSVN%2BESP%2BSWE%2BCHE%2BTUR%2BGBR%2BUSA%2BARG%2BBRA%2BBGR%2BHRV%2BPER%2BROU%2BZAF%2BTHA.A.PREVM%2BTRTM.DT_10P5HB.._T...STANDARD....&pd=2010%2C2023&to[TIME_PERIOD]=false) from OECD (Organization for Economic Co-operation and Development), an international organization that works to build better policies for better lives. The dataset shows many columns (variables) with non-informative data and needs to be cleaned (wrangled) before analysis:
 
-```{r oecd_data, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
+```{r oecd_data, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary library
 library(tidyverse)
 
@@ -665,7 +665,7 @@ preventable_deaths <- read.csv(
 
 First we explore the data:
 
-```{r oecd_data_exp, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
+```{r oecd_data_exp, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Viewing structure of the dataset
 str(preventable_deaths)
 
@@ -687,7 +687,7 @@ colSums(is.na(preventable_deaths))
 
 Now we can start cleaning the data by removing non-informative columns and rows with missing values:
 
-```{r oecd_data_clean, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
+```{r oecd_data_clean, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Selecting relevant columns for analysis
 df_clean <- preventable_deaths %>%
   select(
@@ -722,7 +722,7 @@ summary(df_clean)
 
 Showing some basic statistics of the cleaned data:
 
-```{r oecd_data_stats, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
+```{r oecd_data_stats, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Printing overall statistics
 cat("\n=== OVERALL STATISTICS ===\n")
 cat("Mean death rate:", mean(df_clean$death_rate, na.rm = TRUE), "\n")

@@ -19,13 +19,13 @@ When generating code snippets or explanations, please follow these guidelines:
    - Quarto file: [Data_Science_and_Data_Analytics.qmd](#file:Data_Science_and_Data_Analytics.qmd)
    - Readme: [README.md](#file:README.md)
 3. Code‑block format for changes or new files:
-   ````python
+   ```python
    // filepath: #file:<relative_path>
    # ...existing code...
    def my_new_function(...):
        ...
    # ...existing code...
-   ````
+   ```
 4. Comments and code formatting rules:
    - Always import modules at the top of the file.
    - Use `#` for comments.
