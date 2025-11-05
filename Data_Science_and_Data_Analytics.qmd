@@ -965,10 +965,7 @@ Fundamental packages:
 
 -   `dplyr` for data manipulation (filter, mutate, summarize, joins).
 
-```{r dplyr_package, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, EVAL=FALSE}
-# Installing dplyr package
-install.packages("dplyr")
-
+```{r dplyr_package, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary library
 library(dplyr)
 
@@ -981,15 +978,15 @@ df_summary <- df_clean %>%
     min_death_rate = min(death_rate, na.rm = TRUE)
   ) %>%
   arrange(desc(mean_death_rate))
+
+# Displaying the summary statistics
+print(df_summary)
 ```
 
 -   `tidyr` for data reshaping (pivoting, nesting, separating,
     unnesting).
 
-```{r tidyr_package, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, EVAL=FALSE}
-# Installing tidyr package
-install.packages("tidyr")
-
+```{r tidyr_package, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary library
 library(tidyr)
 
@@ -999,6 +996,9 @@ df_wide <- df_clean %>%
     names_from = year,
     values_from = death_rate
   )
+
+# Displaying the wide format data
+print(df_wide)
 ```
 
 -   `ggplot2` for layered grammar-based visualization. See the example above.
