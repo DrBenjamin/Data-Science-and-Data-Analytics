@@ -340,7 +340,10 @@ data-driven markets.
 For comprehensive coverage of business data analysis methodologies and
 applications, see [Advanced Business
 Analytics](./topics/Scope%20and%20Nature%20of%20Data%20Science/Business%20Data%20Analysis/978-3-031-78070-7.pdf)
-and the analytical foundations outlined in @Evans2020.
+and the analytical foundations outlined in @Evans2020. 
+
+For open access resources, visit [Kaggle](https://www.kaggle.com/),
+a platform for data science competitions and datasets.
 
 ## Emerging Trends
 
@@ -1016,7 +1019,8 @@ print(df_wide)
 
 ## Data Visualization Principles
 
-**Choose encodings appropriate to variable types:** 
+**Choose encodings appropriate to variable types:**
+
 -   Continuous (Quantitative) variables → Position, Length
     Examples: x/y coordinates in scatter plots, bar heights, line positions
 -   Categorical (Nominal) variables → Color hue, Shape, Facets
@@ -1075,19 +1079,22 @@ ggplot(country_subset, aes(x = year, y = death_rate, color = country)) +
 
 Effective visualizations should facilitate three key analytical tasks: comparing values across groups, identifying trends over time, and detecting unusual patterns.
 
-*Support comparison:*
+**Support comparison:**
+
 -   Align items on common scales for direct comparison
 -   Use small multiples (facets) for comparing across categories
 -   Order categorical variables meaningfully (by value, alphabetically, or logically)
 -   Keep consistent ordering across related charts
 
-*Enable trend detection:*
+**Enable trend detection:**
+
 -   Use connected lines for temporal data to show continuity
 -   Add trend lines (linear, loess) to highlight overall patterns
 -   Display sufficient time periods to establish meaningful trends
 -   Avoid over-smoothing that hides important variations
 
-*Facilitate anomaly spotting:*
+**Facilitate anomaly spotting:**
+
 -   Use reference lines or bands for expected ranges
 -   Highlight outliers through color or annotation
 -   Include context (confidence intervals, historical ranges)
