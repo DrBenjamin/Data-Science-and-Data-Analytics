@@ -965,26 +965,179 @@ Fundamental packages:
 
 -   `dplyr` for data manipulation (filter, mutate, summarize, joins).
 
+```{r dplyr_package, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, EVAL=FALSE}
+# Installing dplyr package
+install.packages("dplyr")
+
+# Loading necessary library
+library(dplyr)
+
+# Using dplyr to pipe
+df_summary <- df_clean %>%
+  group_by(country) %>%
+  summarize(
+    mean_death_rate = mean(death_rate, na.rm = TRUE),
+    max_death_rate = max(death_rate, na.rm = TRUE),
+    min_death_rate = min(death_rate, na.rm = TRUE)
+  ) %>%
+  arrange(desc(mean_death_rate))
+```
+
 -   `tidyr` for data reshaping (pivoting, nesting, separating,
     unnesting).
 
--   `ggplot2` for layered grammar-based visualization.
+```{r tidyr_package, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, EVAL=FALSE}
+# Installing tidyr package
+install.packages("tidyr")
+
+# Loading necessary library
+library(tidyr)
+
+# Using tidyr to pivot data
+df_wide <- df_clean %>%
+  pivot_wider(
+    names_from = year,
+    values_from = death_rate
+  )
+```
+
+-   `ggplot2` for layered grammar-based visualization. See the example above.
 
 -   some more R libraries:
 
-    -   `readr`
-    -   `purrr`
-    -   `stringr`
-    -   `forcats`
+    -   `readr` for ingestion of CSV and other flat files.
+    -   `readxl` for ingestion of Excel files.
+    -   `lubridate` for date-time handling.
+    -   `purrr` for functional iteration.
+    -   `stringr` for text handling.
+    -   `forcats` for factor handling.
 
     for ingestion, functional iteration, text, and factor handling.
 
 ## Data Visualization Principles
 
--   Choose encodings appropriate to variable types.
--   Emphasize clarity: reduce chart junk; apply perceptual best
-    practices.
--   Support comparison, trend detection, and anomaly spotting.
+**Choose encodings appropriate to variable types:** 
+-   Continuous (Quantitative) variables → Position, Length
+    Examples: x/y coordinates in scatter plots, bar heights, line positions
+-   Categorical (Nominal) variables → Color hue, Shape, Facets
+    Examples: different colors for groups, point shapes, separate panels
+-   Ordinal variables → Ordered position, Color saturation
+    Examples: ordered categories on axis, gradient colors from light to dark
+-   Temporal variables → Position along x-axis, Line connections
+    Examples: time on horizontal axis, connected points showing progression
+-   Compositional (Part-to-whole) → Stacked position, Area
+    Examples: stacked bars, proportional areas
+
+
+**Emphasize clarity: reduce chart junk; apply perceptual best practices:**
+
+Clarity in data visualization requires removing unnecessary elements that distract from the data while applying principles of human perception to enhance understanding.
+
+-   Remove decorative elements (3D effects, shadows, gradients)
+-   Eliminate redundant labels and gridlines
+-   Minimize non-data ink (borders, background colors)
+-   Avoid unnecessary legends when direct labeling is possible
+-   Use position over angle for quantitative comparisons (bar charts > pie charts)
+-   Maintain consistent scales across comparable charts
+-   Respect aspect ratios that emphasize meaningful patterns
+-   Choose colorblind-friendly palettes
+-   Ensure sufficient contrast between data and background
+
+```{r clarity_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary libraries
+library(ggplot2)
+library(dplyr)
+
+# Creating data for demonstration
+country_subset <- df_clean %>%
+  filter(country %in% c("Germany", "France", "United Kingdom")) %>%
+  filter(year >= 2015)
+
+# Example: Clean, minimal visualization
+ggplot(country_subset, aes(x = year, y = death_rate, color = country)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  labs(
+    title = "Preventable Death Rates (2015-2023)",
+    x = "Year",
+    y = "Deaths per 100,000",
+    color = "Country"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid.minor = element_blank(),  # Removing unnecessary gridlines
+    legend.position = "bottom",
+    plot.title = element_text(face = "bold")
+  )
+```
+
+**Support comparison, trend detection, and anomaly spotting:**
+
+Effective visualizations should facilitate three key analytical tasks: comparing values across groups, identifying trends over time, and detecting unusual patterns.
+
+*Support comparison:*
+-   Align items on common scales for direct comparison
+-   Use small multiples (facets) for comparing across categories
+-   Order categorical variables meaningfully (by value, alphabetically, or logically)
+-   Keep consistent ordering across related charts
+
+*Enable trend detection:*
+-   Use connected lines for temporal data to show continuity
+-   Add trend lines (linear, loess) to highlight overall patterns
+-   Display sufficient time periods to establish meaningful trends
+-   Avoid over-smoothing that hides important variations
+
+*Facilitate anomaly spotting:*
+-   Use reference lines or bands for expected ranges
+-   Highlight outliers through color or annotation
+-   Include context (confidence intervals, historical ranges)
+-   Maintain consistent scales to make deviations visible
+
+```{r comparison_trend_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary libraries
+library(ggplot2)
+library(dplyr)
+
+# Calculating statistics for anomaly detection
+country_stats <- df_clean %>%
+  group_by(country) %>%
+  summarise(
+    mean_rate = mean(death_rate, na.rm = TRUE),
+    sd_rate = sd(death_rate, na.rm = TRUE)
+  )
+
+# Joining back to identify anomalies
+df_annotated <- df_clean %>%
+  left_join(country_stats, by = "country") %>%
+  mutate(
+    z_score = (death_rate - mean_rate) / sd_rate,
+    is_anomaly = abs(z_score) > 2  # Flagging values > 2 standard deviations
+  )
+
+# Example: Visualization supporting comparison, trends, and anomaly detection
+selected_countries <- c("Germany", "France", "United Kingdom", "Italy", "Spain")
+df_subset <- df_annotated %>% filter(country %in% selected_countries)
+
+ggplot(df_subset, aes(x = year, y = death_rate, color = country)) +
+  geom_line(linewidth = 0.8) +
+  geom_point(aes(size = is_anomaly, alpha = is_anomaly)) +
+  scale_size_manual(values = c(1.5, 3), guide = "none") +
+  scale_alpha_manual(values = c(0.6, 1), guide = "none") +
+  facet_wrap(~ country, ncol = 2) +  # Small multiples for comparison
+  labs(
+    title = "Preventable Death Rates: Trends and Anomalies",
+    subtitle = "Larger points indicate statistical anomalies (>2 SD from country mean)",
+    x = "Year",
+    y = "Deaths per 100,000",
+    color = "Country"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "none",
+    strip.text = element_text(face = "bold"),
+    plot.title = element_text(face = "bold")
+  )
+```
 
 ## Detecting Outliers and Anomalies
 
@@ -1019,7 +1172,9 @@ Fundamental packages:
 -   Interpretation of coefficients and marginal effects.
 -   Sensitivity and robustness checks.
 
---\> \newpage \# Literature {#sec-literature}
+\newpage
+
+# Literature {#sec-literature}
 
 All references for this course.
 
