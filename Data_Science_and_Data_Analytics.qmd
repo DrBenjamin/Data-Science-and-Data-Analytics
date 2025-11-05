@@ -820,7 +820,7 @@ Competencies.pdf](./topics/Data%20Analytic%20Competencies/Data%20Collection/Data
     quality, and accessibility for the analytical objectives.
 
 -   **Data Acquisition Methods**: Implement appropriate collection
-    techniques including APIs ([for instance see Spotify API tutorial](https://developer.spotify.com/documentation/web-api/howtos/web-app-profile)), database queries, survey instruments,
+    techniques including APIs (for instance see [Spotify API tutorial](https://developer.spotify.com/documentation/web-api/howtos/web-app-profile) and [Postman Spotify tutorial](https://www.postman.com/gkoroscapidesign/spotify-api/collection/f03m16h/spotify-api)), database queries, survey instruments,
     sensor networks, web scraping, and third-party vendor partnerships,
     ensuring methodological alignment with research design.
 
