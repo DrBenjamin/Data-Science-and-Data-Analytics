@@ -1129,8 +1129,22 @@ ggplot(df_subset, aes(x = year, y = death_rate, color = country)) +
 -   Interpretation of coefficients and marginal effects.
 -   Sensitivity and robustness checks.
 
-\newpage
+# Project report and presentation
 
+You will find all format instructions for the project report and presentation in the [guidelines](./topics/projects/dsda_guidelines_ws2526.qmd).
+
+**Assessment criteria for the report:**
+
+- Clarity of Research Question (and Objectives)
+- Data Understanding and Preparation
+- Appropriateness of Methods and Analysis
+- Implementation and Code Quality (in R)
+- Interpretation of Results
+- Visualization and Communication
+- Structure and Presentation of the Report
+- Critical Reflection and Limitations
+
+\newpage
 # Literature {#sec-literature}
 
 All references for this course.
