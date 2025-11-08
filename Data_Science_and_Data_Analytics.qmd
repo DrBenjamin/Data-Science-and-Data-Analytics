@@ -1131,7 +1131,7 @@ ggplot(df_subset, aes(x = year, y = death_rate, color = country)) +
 
 # Project report and presentation
 
-You will find all format instructions for the project report and presentation in the [guidelines](./topics/projects/dsda_guidelines_ws2526.qmd).
+You will find all format instructions for the project report and presentation in the [guidelines](./topics/projects/dsda_guidelines_ws2526.pdf).
 
 **Assessment criteria for the report:**
 
