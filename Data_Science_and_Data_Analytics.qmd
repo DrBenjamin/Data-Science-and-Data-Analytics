@@ -1234,10 +1234,17 @@ df_wide_fa <- df_clean %>%
   select(-country) %>%
   na.omit()
 
+# Ensuring all columns are numeric and converting to matrix
+df_wide_fa <- df_wide_fa %>%
+  mutate(across(everything(), as.numeric))
+
 # Performing factor analysis using base R stats package
-if(nrow(df_wide_fa) > 10 && ncol(df_wide_fa) >= 2) {
+if(nrow(df_wide_fa) > 10 && ncol(df_wide_fa) >= 3) {
+  # Determining number of factors (minimum of 2 or ncol-1)
+  n_factors <- min(2, ncol(df_wide_fa) - 1)
+  
   # Using factanal from stats package
-  fa_result <- factanal(df_wide_fa, factors = 2, rotation = "varimax")
+  fa_result <- factanal(df_wide_fa, factors = n_factors, rotation = "varimax")
   
   # Displaying factor loadings
   cat("Factor Loadings:\n")
@@ -1252,6 +1259,9 @@ if(nrow(df_wide_fa) > 10 && ncol(df_wide_fa) >= 2) {
   # Displaying uniquenesses (proportion of variance not explained by factors)
   cat("\nUniqueness (1 - communality):\n")
   print(fa_result$uniquenesses)
+} else {
+  cat("Note: Not enough observations or variables for factor analysis.\n")
+  cat("Factor analysis requires at least 3 variables and sufficient observations.\n")
 }
 ```
 
