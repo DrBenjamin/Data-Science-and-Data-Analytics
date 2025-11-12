@@ -1227,16 +1227,15 @@ library(dplyr)
 library(tidyr)
 
 # Creating a wider dataset for factor analysis
+# First, get unique country-year combinations by averaging any duplicates
 df_wide_fa <- df_clean %>%
   filter(year >= 2018) %>%
   select(country, year, death_rate) %>%
+  group_by(country, year) %>%
+  summarise(death_rate = mean(death_rate, na.rm = TRUE), .groups = "drop") %>%
   pivot_wider(names_from = year, values_from = death_rate, names_prefix = "year_") %>%
   select(-country) %>%
   na.omit()
-
-# Ensuring all columns are numeric and converting to matrix
-df_wide_fa <- df_wide_fa %>%
-  mutate(across(everything(), as.numeric))
 
 # Performing factor analysis using base R stats package
 if(nrow(df_wide_fa) > 10 && ncol(df_wide_fa) >= 3) {
