@@ -1381,6 +1381,7 @@ cat("\nDifferent correlations suggest development level may be a confounder.\n")
 # Loading necessary libraries
 library(ggplot2)
 library(dplyr)
+library(lmtest)
 
 # Fitting a regression model
 model <- lm(death_rate ~ year, data = df_clean)
@@ -1391,7 +1392,6 @@ plot(model)
 par(mfrow = c(1, 1))
 
 # Testing for homoskedasticity (Breusch-Pagan test)
-library(lmtest)
 bp_test <- bptest(model)
 cat("\nBreusch-Pagan test for homoskedasticity:\n")
 cat("p-value:", bp_test$p.value, "\n")
