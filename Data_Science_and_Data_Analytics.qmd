@@ -1100,7 +1100,49 @@ ggplot(df_subset, aes(x = year, y = death_rate, color = country)) +
 
 -   **Rule-based methods (IQR, z-scores)**: These classical univariate approaches identify outliers by establishing statistical thresholds, where observations falling beyond predefined boundaries (e.g., 1.5×IQR or ±3 standard deviations) are flagged as potential anomalies. While computationally efficient and interpretable, these methods assume underlying distributional properties and may overlook multivariate patterns.
 
+```{r rule-based_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary library
+library(dplyr)
+
+# Calculating z-scores for death_rate
+df_zscores <- df_clean %>%
+  group_by(country) %>%
+  mutate(
+    mean_rate = mean(death_rate, na.rm = TRUE),
+    sd_rate = sd(death_rate, na.rm = TRUE),
+    z_score = (death_rate - mean_rate) / sd_rate,
+    is_outlier = abs(z_score) > 3  # Flagging z-scores beyond ±3
+  ) %>%
+  ungroup()
+
+# Displaying observations flagged as outliers
+outliers <- df_zscores %>%
+  filter(is_outlier)
+print(outliers)
+```
+
 -   **Robust statistics (median, MAD)**: Resistant measures such as the median and median absolute deviation (MAD) provide reliable central tendency and dispersion estimates that are less influenced by extreme values compared to mean and standard deviation. These statistics form the foundation for outlier detection in skewed or heavy-tailed distributions where parametric assumptions are violated.
+
+```{r robust_statistics_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary library
+library(dplyr)
+
+# Calculating robust statistics for death_rate
+df_robust <- df_clean %>%
+  group_by(country) %>%
+  mutate(
+    median_rate = median(death_rate, na.rm = TRUE),
+    mad_rate = mad(death_rate, constant = 1, na.rm = TRUE), 
+    robust_z = 0.6745 * (death_rate - median_rate) / mad_rate,
+    is_robust_outlier = abs(robust_z) > 3.5
+  ) %>%
+  ungroup()
+
+# Displaying observations flagged as robust outliers
+robust_outliers <- df_robust %>%
+  filter(is_robust_outlier)
+print(robust_outliers)
+```
 
 -   **Model-based or multivariate detection (e.g., Mahalanobis distance, clustering residuals)**: Advanced techniques account for correlation structures and multidimensional relationships, enabling detection of outliers that appear normal in individual dimensions but are anomalous in multivariate space. Mahalanobis distance measures how many standard deviations an observation is from the distribution center, while clustering residuals identify observations that deviate from expected cluster membership patterns.
 
@@ -1112,35 +1154,311 @@ ggplot(df_subset, aes(x = year, y = death_rate, color = country)) +
 
 -   **Techniques: Principal Component Analysis (PCA), Factor Analysis, (optionally) t-SNE / UMAP (for exploration)**: PCA identifies orthogonal linear combinations of variables that maximize variance, creating uncorrelated components suitable for regression and classification tasks. Factor Analysis assumes latent constructs underlying observed variables, focusing on shared variance and theoretical interpretation, while non-linear methods like t-SNE and UMAP preserve local neighborhood structures for exploratory visualization of complex data manifolds.
 
+```{r pca_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary libraries
+library(dplyr)
+
+# Preparing data for PCA (using numeric variables only)
+df_pca <- df_clean %>%
+  select(year, death_rate) %>%
+  na.omit()
+
+# Performing PCA
+pca_result <- prcomp(df_pca, scale. = TRUE)
+
+# Displaying summary of PCA
+summary(pca_result)
+
+# Showing principal component loadings
+print(pca_result$rotation)
+
+# Calculating proportion of variance explained
+var_explained <- pca_result$sdev^2 / sum(pca_result$sdev^2)
+cat("Proportion of variance explained by PC1:", round(var_explained[1], 3), "\n")
+cat("Proportion of variance explained by PC2:", round(var_explained[2], 3), "\n")
+```
+
 -   **Interpretability vs. compression trade-offs**: Dimensionality reduction inherently balances the competing objectives of achieving parsimonious data representations and maintaining interpretable relationships to original variables. While aggressive compression maximizes computational efficiency and reduces noise, it may obscure meaningful features and complicate domain-specific interpretation of analytical results.
 
 ## Data Exploration and Mining
 
 -   **Structured EDA workflow: question → visualize → quantify → refine**: Exploratory Data Analysis follows a systematic iterative process that begins with research questions, employs visualization to generate hypotheses, quantifies patterns through statistical measures, and refines understanding through successive analytical cycles. This disciplined approach prevents data dredging while ensuring comprehensive investigation of data characteristics and relationships.
 
+```{r eda_workflow_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary libraries
+library(ggplot2)
+library(dplyr)
+
+# Step 1: Question - Are death rates declining over time?
+
+# Step 2: Visualize
+ggplot(df_clean, aes(x = year, y = death_rate)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(method = "lm", color = "red") +
+  labs(
+    title = "EDA: Death Rates Over Time",
+    x = "Year",
+    y = "Deaths per 100,000"
+  ) +
+  theme_minimal()
+
+# Step 3: Quantify
+trend_model <- lm(death_rate ~ year, data = df_clean)
+summary(trend_model)
+
+# Step 4: Refine - Examine by country
+country_trends <- df_clean %>%
+  group_by(country) %>%
+  summarise(
+    correlation = cor(year, death_rate, use = "complete.obs")
+  ) %>%
+  arrange(correlation)
+
+print(head(country_trends))
+```
+
 -   **PCA for variance structure**: Principal Component Analysis reveals the underlying variance-covariance structure of multivariate data, identifying dimensions of maximum variability and reducing redundancy among correlated variables. By examining eigenvalues and component loadings, analysts determine the effective dimensionality of the dataset and detect dominant patterns in the data.
 
 -   **Factor Analysis for latent constructs**: This technique assumes that observed variables are manifestations of unobservable latent factors, making it particularly valuable for psychometric research and construct validation. Unlike PCA, Factor Analysis models measurement error explicitly and focuses on shared rather than total variance, facilitating theoretical interpretation of underlying psychological or economic constructs.
 
+```{r factor_analysis_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary library
+library(psych)
+
+# Creating a wider dataset for factor analysis
+df_wide_fa <- df_clean %>%
+  filter(year >= 2018) %>%
+  select(country, year, death_rate) %>%
+  pivot_wider(names_from = year, values_from = death_rate, names_prefix = "year_") %>%
+  select(-country) %>%
+  na.omit()
+
+# Performing factor analysis (if we have enough observations)
+if(nrow(df_wide_fa) > 10) {
+  fa_result <- fa(df_wide_fa, nfactors = 2, rotate = "varimax")
+  print(fa_result$loadings)
+  cat("\nProportion of variance explained:\n")
+  print(fa_result$Vaccounted)
+}
+```
+
 -   **Regression Analysis for relationships and predictive structure**: Linear and non-linear regression models quantify relationships between dependent and independent variables, enabling both explanatory analysis of associations and predictive modeling of outcomes. These methods provide parameter estimates, statistical inference, and diagnostic tools to assess model adequacy and identify influential observations.
 
+```{r regression_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary library
+library(dplyr)
+
+# Preparing data with a categorical variable
+df_regression <- df_clean %>%
+  mutate(
+    time_period = case_when(
+      year < 2015 ~ "Early",
+      year >= 2015 & year < 2020 ~ "Middle",
+      year >= 2020 ~ "Recent"
+    )
+  ) %>%
+  filter(!is.na(time_period))
+
+# Simple linear regression
+model_simple <- lm(death_rate ~ year, data = df_regression)
+summary(model_simple)
+
+# Multiple regression with categorical predictor
+model_multiple <- lm(death_rate ~ year + time_period, data = df_regression)
+summary(model_multiple)
+
+# Extracting and interpreting coefficients
+cat("\nCoefficient interpretation:\n")
+cat("Year coefficient:", round(coef(model_simple)[2], 3), "\n")
+cat("This means death rate changes by", round(coef(model_simple)[2], 3), 
+    "per 100,000 per year\n")
+```
+
 -   **Clustering (k-means, hierarchical) for pattern discovery (if included)**: Unsupervised clustering algorithms partition observations into homogeneous groups based on similarity metrics, revealing natural taxonomies and segment structures within data. K-means optimizes within-cluster variance through iterative assignment, while hierarchical methods create nested groupings that can be visualized through dendrograms to inform cluster selection.
+
+```{r clustering_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary libraries
+library(dplyr)
+library(ggplot2)
+
+# Preparing data for clustering - average death rate by country
+df_cluster <- df_clean %>%
+  group_by(country) %>%
+  summarise(
+    mean_death_rate = mean(death_rate, na.rm = TRUE),
+    trend = cor(year, death_rate, use = "complete.obs")
+  ) %>%
+  na.omit()
+
+# K-means clustering
+set.seed(123)
+kmeans_result <- kmeans(df_cluster[, c("mean_death_rate", "trend")], centers = 3)
+
+# Adding cluster assignment to data
+df_cluster$cluster <- as.factor(kmeans_result$cluster)
+
+# Visualizing clusters
+ggplot(df_cluster, aes(x = mean_death_rate, y = trend, color = cluster)) +
+  geom_point(size = 3) +
+  labs(
+    title = "K-means Clustering of Countries",
+    x = "Mean Death Rate",
+    y = "Time Trend (correlation)",
+    color = "Cluster"
+  ) +
+  theme_minimal()
+
+# Displaying cluster centers
+cat("\nCluster Centers:\n")
+print(kmeans_result$centers)
+```
 
 ## Causal Inference with Regression Analysis
 
 -   **Distinguish association vs. causation**: Statistical association measures correlation between variables without implying directionality, whereas causal inference attempts to establish that changes in one variable directly produce changes in another. Demonstrating causality requires careful consideration of temporal precedence, theoretical mechanisms, and elimination of alternative explanations through research design and statistical controls.
 
+```{r association_causation_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary library
+library(dplyr)
+
+# Example: Association between year and death rate
+association <- cor(df_clean$year, df_clean$death_rate, use = "complete.obs")
+cat("Association (correlation) between year and death rate:", round(association, 3), "\n")
+cat("\nThis shows association, but does NOT prove that time causes death rate changes.\n")
+cat("Potential confounders: healthcare improvements, policy changes, etc.\n")
+
+# Demonstrating how confounders can affect interpretation
+# Creating a hypothetical scenario
+df_confound <- df_clean %>%
+  mutate(
+    developed = country %in% c("Germany", "France", "United Kingdom", 
+                                "United States", "Japan")
+  )
+
+# Correlation in developed vs developing countries
+cor_developed <- df_confound %>%
+  filter(developed == TRUE) %>%
+  summarise(cor = cor(year, death_rate, use = "complete.obs")) %>%
+  pull(cor)
+
+cor_developing <- df_confound %>%
+  filter(developed == FALSE) %>%
+  summarise(cor = cor(year, death_rate, use = "complete.obs")) %>%
+  pull(cor)
+
+cat("\nCorrelation in developed countries:", round(cor_developed, 3), "\n")
+cat("Correlation in developing countries:", round(cor_developing, 3), "\n")
+cat("\nDifferent correlations suggest development level may be a confounder.\n")
+```
+
 -   **Model specification and confounding control**: Proper model specification identifies relevant covariates and functional forms to isolate the causal effect of interest while controlling for confounding variables that influence both treatment and outcome. Omitted variable bias, measurement error, and incorrect functional forms threaten causal identification, necessitating theory-driven variable selection and specification testing.
 
 -   **Assumptions: linearity, independence, homoskedasticity, exogeneity**: Valid causal inference from regression requires that relationships are linear in parameters, observations are independent, error variance is constant across predictor levels, and explanatory variables are uncorrelated with the error term. Violations of these assumptions bias coefficient estimates, invalidate standard errors, and compromise hypothesis tests, requiring diagnostic assessment and remedial measures.
 
+```{r regression_assumptions_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary libraries
+library(ggplot2)
+library(dplyr)
+
+# Fitting a regression model
+model <- lm(death_rate ~ year, data = df_clean)
+
+# Checking assumptions through diagnostic plots
+par(mfrow = c(2, 2))
+plot(model)
+par(mfrow = c(1, 1))
+
+# Testing for homoskedasticity (Breusch-Pagan test)
+library(lmtest)
+bp_test <- bptest(model)
+cat("\nBreusch-Pagan test for homoskedasticity:\n")
+cat("p-value:", bp_test$p.value, "\n")
+if(bp_test$p.value < 0.05) {
+  cat("Evidence of heteroskedasticity (non-constant variance)\n")
+} else {
+  cat("No strong evidence against homoskedasticity\n")
+}
+
+# Checking for normality of residuals
+shapiro_test <- shapiro.test(residuals(model)[1:5000])  # Shapiro test limited to 5000 obs
+cat("\nShapiro-Wilk test for normality of residuals:\n")
+cat("p-value:", shapiro_test$p.value, "\n")
+```
+
 -   **Interpretation of coefficients and marginal effects**: Regression coefficients represent the expected change in the dependent variable associated with a one-unit change in the independent variable, holding other factors constant. Marginal effects extend this interpretation to non-linear models and interaction terms, quantifying how the impact of one variable varies across levels of another variable.
+
+```{r coefficient_interpretation_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary library
+library(dplyr)
+
+# Creating interaction term
+df_interaction <- df_clean %>%
+  mutate(
+    recent_period = ifelse(year >= 2020, 1, 0),
+    year_centered = year - mean(year)
+  )
+
+# Model with interaction
+model_interaction <- lm(death_rate ~ year_centered * recent_period, 
+                        data = df_interaction)
+summary(model_interaction)
+
+# Interpreting coefficients
+coefs <- coef(model_interaction)
+cat("\nCoefficient Interpretation:\n")
+cat("--------------------------------------\n")
+cat("Main effect of year:", round(coefs["year_centered"], 3), "\n")
+cat("  -> In pre-2020 period, each year is associated with a", 
+    round(coefs["year_centered"], 3), "change in death rate\n\n")
+
+cat("Interaction effect:", round(coefs["year_centered:recent_period"], 3), "\n")
+cat("  -> In 2020+, the year effect changes by an additional", 
+    round(coefs["year_centered:recent_period"], 3), "\n")
+cat("  -> Total effect in 2020+:", 
+    round(coefs["year_centered"] + coefs["year_centered:recent_period"], 3), "\n")
+```
 
 -   **Sensitivity and robustness checks**: Assessing the stability of causal conclusions across alternative model specifications, sample restrictions, and analytical choices strengthens inference and identifies fragile results dependent on specific assumptions. Techniques include varying control variables, testing different functional forms, examining subgroup effects, and conducting placebo tests to validate identification strategies.
 
+```{r robustness_checks_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary library
+library(dplyr)
+
+# Base model
+model1 <- lm(death_rate ~ year, data = df_clean)
+
+# Alternative specification 1: Adding squared term
+df_robust <- df_clean %>%
+  mutate(year_sq = year^2)
+model2 <- lm(death_rate ~ year + year_sq, data = df_robust)
+
+# Alternative specification 2: Different time periods
+df_subset1 <- df_clean %>% filter(year >= 2015)
+model3 <- lm(death_rate ~ year, data = df_subset1)
+
+df_subset2 <- df_clean %>% filter(year < 2020)
+model4 <- lm(death_rate ~ year, data = df_subset2)
+
+# Comparing coefficients across models
+cat("Robustness Check: Year Coefficient Across Specifications\n")
+cat("-------------------------------------------------------\n")
+cat("Model 1 (Base):", round(coef(model1)["year"], 4), "\n")
+cat("Model 2 (Quadratic):", round(coef(model2)["year"], 4), "\n")
+cat("Model 3 (2015+):", round(coef(model3)["year"], 4), "\n")
+cat("Model 4 (Pre-2020):", round(coef(model4)["year"], 4), "\n")
+
+cat("\nInterpretation: If coefficients are similar across specifications,\n")
+cat("this suggests the relationship is robust to model choices.\n")
+
+# Comparing R-squared values
+cat("\nModel Fit Comparison:\n")
+cat("Model 1 R-squared:", round(summary(model1)$r.squared, 4), "\n")
+cat("Model 2 R-squared:", round(summary(model2)$r.squared, 4), "\n")
+```
+
 # Project report and presentation
 
-You will find all format instructions for the project report and presentation in the [guidelines](./topics/projects/dsda_guidelines_ws2526.pdf).
+You will find all formal instructions for the project report and presentation in the [guidelines](./topics/projects/dsda_guidelines_ws2526.pdf).
 
 **Presentation timetable:**
 
