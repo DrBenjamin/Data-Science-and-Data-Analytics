@@ -1222,8 +1222,9 @@ print(head(country_trends))
 -   **Factor Analysis for latent constructs**: This technique assumes that observed variables are manifestations of unobservable latent factors, making it particularly valuable for psychometric research and construct validation. Unlike PCA, Factor Analysis models measurement error explicitly and focuses on shared rather than total variance, facilitating theoretical interpretation of underlying psychological or economic constructs.
 
 ```{r factor_analysis_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
-# Loading necessary library
-library(psych)
+# Loading necessary libraries
+library(dplyr)
+library(tidyr)
 
 # Creating a wider dataset for factor analysis
 df_wide_fa <- df_clean %>%
@@ -1233,12 +1234,24 @@ df_wide_fa <- df_clean %>%
   select(-country) %>%
   na.omit()
 
-# Performing factor analysis (if we have enough observations)
-if(nrow(df_wide_fa) > 10) {
-  fa_result <- fa(df_wide_fa, nfactors = 2, rotate = "varimax")
+# Performing factor analysis using base R stats package
+if(nrow(df_wide_fa) > 10 && ncol(df_wide_fa) >= 2) {
+  # Using factanal from stats package
+  fa_result <- factanal(df_wide_fa, factors = 2, rotation = "varimax")
+  
+  # Displaying factor loadings
+  cat("Factor Loadings:\n")
   print(fa_result$loadings)
-  cat("\nProportion of variance explained:\n")
-  print(fa_result$Vaccounted)
+  
+  # Calculating proportion of variance explained
+  loadings_sq <- fa_result$loadings^2
+  var_explained <- colSums(loadings_sq) / nrow(loadings_sq)
+  cat("\nProportion of variance explained by each factor:\n")
+  print(var_explained)
+  
+  # Displaying uniquenesses (proportion of variance not explained by factors)
+  cat("\nUniqueness (1 - communality):\n")
+  print(fa_result$uniquenesses)
 }
 ```
 
