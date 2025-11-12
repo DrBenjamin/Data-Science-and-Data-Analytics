@@ -1133,6 +1133,15 @@ ggplot(df_subset, aes(x = year, y = death_rate, color = country)) +
 
 You will find all format instructions for the project report and presentation in the [guidelines](./topics/projects/dsda_guidelines_ws2526.pdf).
 
+**Presentation timetable:**
+
+- Project *Spotify* (Jill, Leonie, Isabel): Week 49 (3.12.2025)
+- Project *Environmental Pollution* (Frederik): Week 49 (3.12.2025)
+- Project *COVID-19 pandemic* (Mats, Laurine, Eric): Week 50 (10.12.2025)
+- Project *Influencer Engagement* (Stella, Athina): Week 50 (10.12.2025)
+- Project *Elon Musk* (Esra, Mira): Week 51 (17.12.2025)
+- Project *??* (Jamder): Week 51 (17.12.2025)  
+
 **Assessment criteria for the report:**
 
 - Clarity of Research Question (and Objectives)
