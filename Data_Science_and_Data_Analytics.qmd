@@ -201,6 +201,10 @@ disciplines:
     ![**Source:**
     *LinkedIn*](topics/./Scope%20and%20Nature%20of%20Data%20Science/AI%20and%20culture.png)
 
+    A recent [Business Punk pilot](https://www.business-punk.com/tech/business-punk-research-haben-chatgpt-co-schon-markenstatus/) study reveals that AI systems like ChatGPT, Claude, and Meta AI are developing genuine brand characteristics through their consistent tonality, personality, and emotional resonance with users. The research shows US-based AI models dominate in both global presence and emotional connection, while European systems remain functionally strong but lack distinctive brand identity. This transformation marks a shift where AI branding emerges in real-time through every interaction, making personality a core product quality and positioning systems like Claude and Meta AI as potential "superbrands" of the next decade.
+
+    ![**Source:** *Business Punk*](./topics/Scope%20and%20Nature%20of%20Data%20Science/brand_characteristics.png)
+
 The interdisciplinary nature of data science requires practitioners to
 develop competencies across these domains while maintaining awareness of
 how different methodological traditions complement and inform each
