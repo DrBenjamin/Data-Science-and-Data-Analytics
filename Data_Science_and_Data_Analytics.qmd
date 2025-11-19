@@ -890,9 +890,9 @@ and compliant data inputs for research and coursework (Weiskopf & Weng,
 2016; Wilkinson et al., 2016; GO FAIR Foundation, n.d.; Semarchy, n.d.;
 IBM, n.d.).
 
-Tools like [dbt](https://www.getdbt.com/), Apache Airflow(https://airflow.apache.org),
-and data catalog platforms (e.g., Alation, Collibra) operationalize data management 
-practices. Also the [n8n](https://n8n.io/) automation tool can be used for automating data workflows. 
+Tools like [dbt](https://www.getdbt.com/), [Apache Airflow](https://airflow.apache.org),
+and data catalog platforms (e.g., [Alation](https://www.alation.com), [Collibra](https://www.collibra.com)) operationalize data management practices.
+Also the [n8n](https://n8n.io/) automation tool can be used for automating data workflows. 
 See the [Analytical Skills for Business course handbook](https://drbenjamin.github.io/analytical-skills.html#overview-on-no-code-and-low-code-tools-for-data-analytics) on this topic. In late
 2025 there was a free [n8n certification course](https://docs.n8n.io/courses/level-one/)
 added to the n8n documentation.
