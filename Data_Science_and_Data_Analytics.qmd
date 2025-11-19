@@ -876,18 +876,26 @@ governance processes that balance automated checks with human oversight.
 FAIR data principles provide a practical blueprint for metadata-rich
 stewardship to support findability, accessibility, interoperability, and
 reuse through machine-actionable metadata and persistent identifiers.
+
 Master Data Management ensures clean, trusted core entities across
 systems via governance and harmonization. Data privacy, security, and
 regulatory compliance embed responsible data handling and risk
 management, guided by purpose limitation, data minimization, accuracy,
 storage limitations, integrity/confidentiality, and accountability.
-Emerging trends in cloud-native data platforms, ETL/ELT, data
-lakes/lakehouses, and broader metadata automation shape scalable
-storage/compute and governance, enabling reproducible analytics and ML
-workflows. Together, these strands underpin trustworthy, discoverable,
+Emerging trends in cloud-native data platforms, ETL/ELT (Extract, Transform,
+Load or Extract, Load, Transform), data lakes/lakehouses, and broader metadata
+automation shape scalable storage/compute and governance, enabling reproducible analytics
+and ML workflows. Together, these strands underpin trustworthy, discoverable,
 and compliant data inputs for research and coursework (Weiskopf & Weng,
 2016; Wilkinson et al., 2016; GO FAIR Foundation, n.d.; Semarchy, n.d.;
 IBM, n.d.).
+
+Tools like [dbt](https://www.getdbt.com/), Apache Airflow(https://airflow.apache.org),
+and data catalog platforms (e.g., Alation, Collibra) operationalize data management 
+practices. Also the [n8n](https://n8n.io/) automation tool can be used for automating data workflows. 
+See the [Analytical Skills for Business course handbook](https://drbenjamin.github.io/analytical-skills.html#overview-on-no-code-and-low-code-tools-for-data-analytics) on this topic. In late
+2025 there was a free [n8n certification course](https://docs.n8n.io/courses/level-one/)
+added to the n8n documentation.
 
 ## Data Evaluation
 
