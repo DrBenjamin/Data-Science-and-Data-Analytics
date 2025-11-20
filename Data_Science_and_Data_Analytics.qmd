@@ -1683,9 +1683,11 @@ presentation in the
 -   Project *Spotify* (Jill, Leonie, Isabel): Week 49 (3.12.2025)
 -   Project *Environmental Pollution* (Frederik): Week 49 (3.12.2025)
 -   Project *Elon Musk* (Esra, Mira): Week 50 (10.12.2025)
--   Project *Influencer Engagement* (Stella, Athina): Week 50 (10.12.2025)
+-   Project *Influencer Engagement* (Stella, Athina): Week 50
+    (10.12.2025)
 -   Project *Soccer Player Valuation* (Dominic): Week 51 (10.12.2025)
--   Project *COVID-19 pandemic* (Mats, Laurine, Eric): Week 51 (17.12.2025)
+-   Project *COVID-19 pandemic* (Mats, Laurine, Eric): Week 51
+    (17.12.2025)
 -   Project *AI companion* (Jamder): Week 51 (17.12.2025)
 
 **Assessment criteria for the report:**
@@ -1718,13 +1720,13 @@ imr_df <- imr
 
 # Combining two data frames
 ?ourdata::combine
-combined_df <- ourdata::combine(imr_df$name, hdi_df$country, imr_df$value, hdi_df$hdi, 
+combined_df <- ourdata::combine(imr_df$name, hdi_df$country, imr_df$`deaths/1`, hdi_df$HumanDevelopmentIndex_2024, 
                                 col1 = "Country", col2 = "IMR", col3 = "HDI")
 
-# Combining with dplyr
+# or combining with dplyr
 ?inner_join
-combined_df2 <- inner_join(imr_df, hdi_df, by = c("name" = "country")) %>%
-  select(Country = name, IMR = value, HDI = hdi)
+combined_df <- inner_join(imr_df, hdi_df, by = c("name" = "country")) %>%
+  select(Country = name, IMR = `deaths/1`, HDI = HumanDevelopmentIndex_2024)
 
 # Creating scatter plot
 ?plot
@@ -1741,23 +1743,26 @@ summary(model)
 
 **Conclusion and interpretation of the results:**
 
-The fitted linear model (IMR ~ HDI) shows a very strong, negative association:
-the HDI coefficient is −113.23 (SE = 4.73, t = −23.92, p < 2e‑16). 
+The fitted linear model (IMR \~ HDI) shows a very strong, negative
+association: the HDI coefficient is −113.23 (SE = 4.73, t = −23.92, p \<
+2e‑16).
 
-This means that a one-unit increase in HDI (note: HDI ranges roughly 0–1) is associated with
-a predicted decrease in infant mortality of about 113 deaths per 1,000 live births. 
+This means that a one-unit increase in HDI (note: HDI ranges roughly
+0–1) is associated with a predicted decrease in infant mortality of
+about 113 deaths per 1,000 live births.
 
-Practical meaning
-Higher human development (better education, income and health components of HDI) is
-strongly associated with lower infant mortality.
+Practical meaning Higher human development (better education, income and
+health components of HDI) is strongly associated with lower infant
+mortality.
 
-Caveats and diagnostics to check
-Correlation ≠ causation: this is observational. Confounding (e.g., health spending, access to care,
-urbanization) could drive both HDI and IMR. Avoid causal claims without further analysis.
+Caveats and diagnostics to check Correlation ≠ causation: this is
+observational. Confounding (e.g., health spending, access to care,
+urbanization) could drive both HDI and IMR. Avoid causal claims without
+further analysis.
 
-Summary
-HDI and IMR are strongly negatively associated: higher HDI is linked to substantially lower infant mortality
-(HDI explains ~77% of IMR variation here), but confirmatory causal analysis and diagnostic 
+Summary HDI and IMR are strongly negatively associated: higher HDI is
+linked to substantially lower infant mortality (HDI explains \~77% of
+IMR variation here), but confirmatory causal analysis and diagnostic
 checks are needed before policy attribution.
 
 \newpage
