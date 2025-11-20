@@ -1,10 +1,10 @@
 # Data Science and Data Analytics
 
-Course Data Science and Data Analytics in the Bachelor Studies International Business Management (B. A.) at the Hochschule Fresenius - University of Applied Sciences - International Business School in Cologne Germany.
+Course **Data Science and Data Analytics** in the Bachelor Studies International Business Management (B. A.) at the Hochschule Fresenius - **University of Applied Sciences** - International Business School in Cologne Germany.
 
 ## Setup Python Environment
 
-Setup the Python environment using `conda`:
+Setup the Python *environment* using `conda`:
 
 ```bash
 # Create and activate the conda environment

@@ -201,9 +201,21 @@ disciplines:
     ![**Source:**
     *LinkedIn*](topics/./Scope%20and%20Nature%20of%20Data%20Science/AI%20and%20culture.png)
 
-    A recent [Business Punk pilot](https://www.business-punk.com/tech/business-punk-research-haben-chatgpt-co-schon-markenstatus/) study reveals that AI systems like ChatGPT, Claude, and Meta AI are developing genuine brand characteristics through their consistent tonality, personality, and emotional resonance with users. The research shows US-based AI models dominate in both global presence and emotional connection, while European systems remain functionally strong but lack distinctive brand identity. This transformation marks a shift where AI branding emerges in real-time through every interaction, making personality a core product quality and positioning systems like Claude and Meta AI as potential "superbrands" of the next decade.
+    A recent [Business Punk
+    pilot](https://www.business-punk.com/tech/business-punk-research-haben-chatgpt-co-schon-markenstatus/)
+    study reveals that AI systems like ChatGPT, Claude, and Meta AI are
+    developing genuine brand characteristics through their consistent
+    tonality, personality, and emotional resonance with users. The
+    research shows US-based AI models dominate in both global presence
+    and emotional connection, while European systems remain functionally
+    strong but lack distinctive brand identity. This transformation
+    marks a shift where AI branding emerges in real-time through every
+    interaction, making personality a core product quality and
+    positioning systems like Claude and Meta AI as potential
+    "superbrands" of the next decade.
 
-    ![**Source:** *Business Punk*](./topics/Scope%20and%20Nature%20of%20Data%20Science/brand_characteristics.png)
+    ![**Source:** *Business
+    Punk*](./topics/Scope%20and%20Nature%20of%20Data%20Science/brand_characteristics.png)
 
 The interdisciplinary nature of data science requires practitioners to
 develop competencies across these domains while maintaining awareness of
@@ -344,10 +356,10 @@ data-driven markets.
 For comprehensive coverage of business data analysis methodologies and
 applications, see [Advanced Business
 Analytics](./topics/Scope%20and%20Nature%20of%20Data%20Science/Business%20Data%20Analysis/978-3-031-78070-7.pdf)
-and the analytical foundations outlined in @Evans2020. 
+and the analytical foundations outlined in @Evans2020.
 
-For open access resources, visit [Kaggle](https://www.kaggle.com/),
-a platform for data science competitions and datasets.
+For open access resources, visit [Kaggle](https://www.kaggle.com/), a
+platform for data science competitions and datasets.
 
 ## Emerging Trends
 
@@ -621,7 +633,9 @@ print(hierarchical_data_grouped)
 
 **Some small datasets to start with**
 
-A custom R package `ourdata` has been created to provide some small datasets (and also some helper R functions) for practice. You can install it from GitHub using the following commands:
+A custom R package `ourdata` has been created to provide some small
+datasets (and also some helper R functions) for practice. You can
+install it from GitHub using the following commands:
 
 ```{r r_package_inst, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Installing Github R packages
@@ -651,9 +665,15 @@ help(combine)
 ourdata::combine(kirche$Jahr, koelsch$Jahr, kirche$Austritte, koelsch$Koelsch)
 ```
 
-** A messy dataset example**
+\*\* A messy dataset example\*\*
 
-We collect [data](https://data-explorer.oecd.org/vis?lc=en&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_HEALTH_STAT%40DF_AM&df[ag]=OECD.ELS.HD&dq=AUS%2BAUT%2BBEL%2BCAN%2BCHL%2BCOL%2BCRI%2BCZE%2BDNK%2BEST%2BFIN%2BFRA%2BDEU%2BGRC%2BHUN%2BISL%2BIRL%2BISR%2BITA%2BJPN%2BKOR%2BLVA%2BLTU%2BLUX%2BMEX%2BNLD%2BNZL%2BNOR%2BPOL%2BPRT%2BSVK%2BSVN%2BESP%2BSWE%2BCHE%2BTUR%2BGBR%2BUSA%2BARG%2BBRA%2BBGR%2BHRV%2BPER%2BROU%2BZAF%2BTHA.A.PREVM%2BTRTM.DT_10P5HB.._T...STANDARD....&pd=2010%2C2023&to[TIME_PERIOD]=false) from OECD (Organization for Economic Co-operation and Development), an international organization that works to build better policies for better lives. The dataset shows many columns (variables) with non-informative data and needs to be cleaned (wrangled) before analysis. First load the data into R from CSV file:
+We collect
+[data](https://data-explorer.oecd.org/vis?lc=en&df%5Bds%5D=dsDisseminateFinalDMZ&df%5Bid%5D=DSD_HEALTH_STAT%40DF_AM&df%5Bag%5D=OECD.ELS.HD&dq=AUS%2BAUT%2BBEL%2BCAN%2BCHL%2BCOL%2BCRI%2BCZE%2BDNK%2BEST%2BFIN%2BFRA%2BDEU%2BGRC%2BHUN%2BISL%2BIRL%2BISR%2BITA%2BJPN%2BKOR%2BLVA%2BLTU%2BLUX%2BMEX%2BNLD%2BNZL%2BNOR%2BPOL%2BPRT%2BSVK%2BSVN%2BESP%2BSWE%2BCHE%2BTUR%2BGBR%2BUSA%2BARG%2BBRA%2BBGR%2BHRV%2BPER%2BROU%2BZAF%2BTHA.A.PREVM%2BTRTM.DT_10P5HB.._T...STANDARD....&pd=2010%2C2023&to%5BTIME_PERIOD%5D=false)
+from OECD (Organization for Economic Co-operation and Development), an
+international organization that works to build better policies for
+better lives. The dataset shows many columns (variables) with
+non-informative data and needs to be cleaned (wrangled) before analysis.
+First load the data into R from CSV file:
 
 ```{r oecd_data_1, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
 # Reading the dataset from a CSV file
@@ -693,7 +713,8 @@ summary(preventable_deaths)
 colSums(is.na(preventable_deaths))
 ```
 
-Now we can start cleaning the data by removing non-informative columns and rows with missing values:
+Now we can start cleaning the data by removing non-informative columns
+and rows with missing values:
 
 ```{r oecd_data_clean, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary library
@@ -770,7 +791,8 @@ year_stats <- df_clean %>%
 print(year_stats)
 ```
 
-To visualize the cleaned data, we can create a distribution plot of preventable death rates:
+To visualize the cleaned data, we can create a distribution plot of
+preventable death rates:
 
 ```{r oecd_data_viz, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary library
@@ -824,15 +846,22 @@ Competencies.pdf](./topics/Data%20Analytic%20Competencies/Data%20Collection/Data
     quality, and accessibility for the analytical objectives.
 
 -   **Data Acquisition Methods**: Implement appropriate collection
-    techniques including APIs (for instance see [Spotify API tutorial](https://developer.spotify.com/documentation/web-api/howtos/web-app-profile) and [Postman Spotify tutorial](https://www.postman.com/gkoroscapidesign/spotify-api/collection/f03m16h/spotify-api)), database queries, survey instruments,
-    sensor networks, web scraping, and third-party vendor partnerships,
-    ensuring methodological alignment with research design.
+    techniques including APIs (for instance see [Spotify API
+    tutorial](https://developer.spotify.com/documentation/web-api/howtos/web-app-profile)
+    and [Postman Spotify
+    tutorial](https://www.postman.com/gkoroscapidesign/spotify-api/collection/f03m16h/spotify-api)),
+    database queries, survey instruments, sensor networks, web scraping,
+    and third-party vendor partnerships, ensuring methodological
+    alignment with research design.
 
-    For the two projects below, here are some data sources recommendations (automatically created by
-    Perplexity AI Deep Research):
+    For the two projects below, here are some data sources
+    recommendations (automatically created by Perplexity AI Deep
+    Research):
 
-    -   [Project car emission/sales](./topics/projects/car_emission_sales_data_scources.pdf)
-    -   [Project Spotify](topics/projects/success_spotifiy_data_sources.pdf)
+    -   [Project car
+        emission/sales](./topics/projects/car_emission_sales_data_scources.pdf)
+    -   [Project
+        Spotify](topics/projects/success_spotifiy_data_sources.pdf)
 
 -   **Quality and Governance Framework**: Establish protocols for
     assessing data provenance, licensing agreements, ethical compliance,
@@ -882,20 +911,25 @@ systems via governance and harmonization. Data privacy, security, and
 regulatory compliance embed responsible data handling and risk
 management, guided by purpose limitation, data minimization, accuracy,
 storage limitations, integrity/confidentiality, and accountability.
-Emerging trends in cloud-native data platforms, ETL/ELT (Extract, Transform,
-Load or Extract, Load, Transform), data lakes/lakehouses, and broader metadata
-automation shape scalable storage/compute and governance, enabling reproducible analytics
-and ML workflows. Together, these strands underpin trustworthy, discoverable,
-and compliant data inputs for research and coursework (Weiskopf & Weng,
-2016; Wilkinson et al., 2016; GO FAIR Foundation, n.d.; Semarchy, n.d.;
-IBM, n.d.).
+Emerging trends in cloud-native data platforms, ETL/ELT (Extract,
+Transform, Load or Extract, Load, Transform), data lakes/lakehouses, and
+broader metadata automation shape scalable storage/compute and
+governance, enabling reproducible analytics and ML workflows. Together,
+these strands underpin trustworthy, discoverable, and compliant data
+inputs for research and coursework (Weiskopf & Weng, 2016; Wilkinson et
+al., 2016; GO FAIR Foundation, n.d.; Semarchy, n.d.; IBM, n.d.).
 
-Tools like [dbt](https://www.getdbt.com/), [Apache Airflow](https://airflow.apache.org),
-and data catalog platforms (e.g., [Alation](https://www.alation.com), [Collibra](https://www.collibra.com)) operationalize data management practices.
-Also the [n8n](https://n8n.io/) automation tool can be used for automating data workflows. 
-See the [Analytical Skills for Business course handbook](https://drbenjamin.github.io/analytical-skills.html#overview-on-no-code-and-low-code-tools-for-data-analytics) on this topic. In late
-2025 there was a free [n8n certification course](https://docs.n8n.io/courses/level-one/)
-added to the n8n documentation.
+Tools like [dbt](https://www.getdbt.com/), [Apache
+Airflow](https://airflow.apache.org), and data catalog platforms (e.g.,
+[Alation](https://www.alation.com),
+[Collibra](https://www.collibra.com)) operationalize data management
+practices. Also the [n8n](https://n8n.io/) automation tool can be used
+for automating data workflows. See the [Analytical Skills for Business
+course
+handbook](https://drbenjamin.github.io/analytical-skills.html#overview-on-no-code-and-low-code-tools-for-data-analytics)
+on this topic. In late 2025 there was a free [n8n certification
+course](https://docs.n8n.io/courses/level-one/) added to the n8n
+documentation.
 
 ## Data Evaluation
 
@@ -906,15 +940,49 @@ added to the n8n documentation.
     approaches.
 -   Implement tools, workflows, and governance for data evaluation.
 
-Data evaluation ensures datasets are fit-for-purpose, reliable, and trustworthy throughout the analytical lifecycle. It encompasses systematic assessment of data quality dimensions (completeness, accuracy, consistency, validity, timeliness, uniqueness), validation and verification processes, and strategic application of statistical methods and data profiling. Quality dimensions provide measurable criteria for determining whether data meets analytical requirements, while assessment frameworks translate these into actionable metrics enabling objective measurement and contextual interpretation.
+Data evaluation ensures datasets are fit-for-purpose, reliable, and
+trustworthy throughout the analytical lifecycle. It encompasses
+systematic assessment of data quality dimensions (completeness,
+accuracy, consistency, validity, timeliness, uniqueness), validation and
+verification processes, and strategic application of statistical methods
+and data profiling. Quality dimensions provide measurable criteria for
+determining whether data meets analytical requirements, while assessment
+frameworks translate these into actionable metrics enabling objective
+measurement and contextual interpretation.
 
-Validation and verification are complementary processes essential for data integrity. Validation checks occur at entry points, preventing bad data through constraint checks, format validation, and business rule enforcement. Verification involves post-collection checks ensuring data remains accurate and consistent over time and across system boundaries, supporting reproducibility and traceability. Together, validation acts as a gatekeeper while verification provides ongoing quality assurance.
+Validation and verification are complementary processes essential for
+data integrity. Validation checks occur at entry points, preventing bad
+data through constraint checks, format validation, and business rule
+enforcement. Verification involves post-collection checks ensuring data
+remains accurate and consistent over time and across system boundaries,
+supporting reproducibility and traceability. Together, validation acts
+as a gatekeeper while verification provides ongoing quality assurance.
 
-Statistical methods form the technical foundation for evaluation. Outlier detection techniques (z-score, IQR, DBSCAN) identify anomalous observations requiring investigation. Distribution checks assess whether data conforms to expected patterns, while profiling describes dataset structure, missingness patterns, and statistical properties. Regression analysis and hypothesis testing diagnose quality issues and quantify relationships between quality metrics and analytical outcomes.
+Statistical methods form the technical foundation for evaluation.
+Outlier detection techniques (z-score, IQR, DBSCAN) identify anomalous
+observations requiring investigation. Distribution checks assess whether
+data conforms to expected patterns, while profiling describes dataset
+structure, missingness patterns, and statistical properties. Regression
+analysis and hypothesis testing diagnose quality issues and quantify
+relationships between quality metrics and analytical outcomes.
 
-Modern data evaluation balances automated and manual approaches. Automated evaluation offers speed, scalability, and consistency for large datasets through rule-based validation, statistical profiling, and machine learning-based anomaly detection. Manual evaluation contributes domain expertise, contextual understanding, and interpretative judgment that automated systems cannot replicate. Human-in-the-loop approaches combine automation's efficiency with human interpretability, optimizing both throughput and quality.
+Modern data evaluation balances automated and manual approaches.
+Automated evaluation offers speed, scalability, and consistency for
+large datasets through rule-based validation, statistical profiling, and
+machine learning-based anomaly detection. Manual evaluation contributes
+domain expertise, contextual understanding, and interpretative judgment
+that automated systems cannot replicate. Human-in-the-loop approaches
+combine automation's efficiency with human interpretability, optimizing
+both throughput and quality.
 
-Tools, workflows, and governance frameworks provide infrastructure for systematic evaluation across the data lifecycle. Data profiling tools (e.g., Pandas Profiling, Great Expectations, Deequ) automate quality assessment. Validation frameworks embed checks into ETL/ELT pipelines. Data lineage tracking and metadata management support traceability and impact analysis. Governance frameworks establish roles, responsibilities, and processes aligning evaluation practices with regulatory requirements and reproducibility needs.
+Tools, workflows, and governance frameworks provide infrastructure for
+systematic evaluation across the data lifecycle. Data profiling tools
+(e.g., Pandas Profiling, Great Expectations, Deequ) automate quality
+assessment. Validation frameworks embed checks into ETL/ELT pipelines.
+Data lineage tracking and metadata management support traceability and
+impact analysis. Governance frameworks establish roles,
+responsibilities, and processes aligning evaluation practices with
+regulatory requirements and reproducibility needs.
 
 \newpage
 
@@ -966,7 +1034,8 @@ df_wide <- df_clean %>%
 print(df_wide)
 ```
 
--   `ggplot2` for layered grammar-based visualization. See the example above.
+-   `ggplot2` for layered grammar-based visualization. See the example
+    above.
 
 -   some more R libraries:
 
@@ -983,27 +1052,31 @@ print(df_wide)
 
 **Choose encodings appropriate to variable types:**
 
--   Continuous (Quantitative) variables → Position, Length
-    Examples: x/y coordinates in scatter plots, bar heights, line positions
--   Categorical (Nominal) variables → Color hue, Shape, Facets
-    Examples: different colors for groups, point shapes, separate panels
--   Ordinal variables → Ordered position, Color saturation
-    Examples: ordered categories on axis, gradient colors from light to dark
+-   Continuous (Quantitative) variables → Position, Length Examples: x/y
+    coordinates in scatter plots, bar heights, line positions
+-   Categorical (Nominal) variables → Color hue, Shape, Facets Examples:
+    different colors for groups, point shapes, separate panels
+-   Ordinal variables → Ordered position, Color saturation Examples:
+    ordered categories on axis, gradient colors from light to dark
 -   Temporal variables → Position along x-axis, Line connections
-    Examples: time on horizontal axis, connected points showing progression
--   Compositional (Part-to-whole) → Stacked position, Area
-    Examples: stacked bars, proportional areas
+    Examples: time on horizontal axis, connected points showing
+    progression
+-   Compositional (Part-to-whole) → Stacked position, Area Examples:
+    stacked bars, proportional areas
 
+**Emphasize clarity: reduce chart junk; apply perceptual best
+practices:**
 
-**Emphasize clarity: reduce chart junk; apply perceptual best practices:**
-
-Clarity in data visualization requires removing unnecessary elements that distract from the data while applying principles of human perception to enhance understanding.
+Clarity in data visualization requires removing unnecessary elements
+that distract from the data while applying principles of human
+perception to enhance understanding.
 
 -   Remove decorative elements (3D effects, shadows, gradients)
 -   Eliminate redundant labels and gridlines
 -   Minimize non-data ink (borders, background colors)
 -   Avoid unnecessary legends when direct labeling is possible
--   Use position over angle for quantitative comparisons (bar charts > pie charts)
+-   Use position over angle for quantitative comparisons (bar charts \>
+    pie charts)
 -   Maintain consistent scales across comparable charts
 -   Respect aspect ratios that emphasize meaningful patterns
 -   Choose colorblind-friendly palettes
@@ -1039,13 +1112,16 @@ ggplot(country_subset, aes(x = year, y = death_rate, color = country)) +
 
 **Support comparison, trend detection, and anomaly spotting:**
 
-Effective visualizations should facilitate three key analytical tasks: comparing values across groups, identifying trends over time, and detecting unusual patterns.
+Effective visualizations should facilitate three key analytical tasks:
+comparing values across groups, identifying trends over time, and
+detecting unusual patterns.
 
 **Support comparison:**
 
 -   Align items on common scales for direct comparison
 -   Use small multiples (facets) for comparing across categories
--   Order categorical variables meaningfully (by value, alphabetically, or logically)
+-   Order categorical variables meaningfully (by value, alphabetically,
+    or logically)
 -   Keep consistent ordering across related charts
 
 **Enable trend detection:**
@@ -1110,7 +1186,13 @@ ggplot(df_subset, aes(x = year, y = death_rate, color = country)) +
 
 ## Detecting Outliers and Anomalies
 
--   **Rule-based methods (IQR, z-scores)**: These classical univariate approaches identify outliers by establishing statistical thresholds, where observations falling beyond predefined boundaries (e.g., 1.5×IQR or ±3 standard deviations) are flagged as potential anomalies. While computationally efficient and interpretable, these methods assume underlying distributional properties and may overlook multivariate patterns.
+-   **Rule-based methods (IQR, z-scores)**: These classical univariate
+    approaches identify outliers by establishing statistical thresholds,
+    where observations falling beyond predefined boundaries (e.g.,
+    1.5×IQR or ±3 standard deviations) are flagged as potential
+    anomalies. While computationally efficient and interpretable, these
+    methods assume underlying distributional properties and may overlook
+    multivariate patterns.
 
 ```{r rule-based_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary library
@@ -1133,7 +1215,13 @@ outliers <- df_zscores %>%
 print(outliers)
 ```
 
--   **Robust statistics (median, MAD)**: Resistant measures such as the median and median absolute deviation (MAD) provide reliable central tendency and dispersion estimates that are less influenced by extreme values compared to mean and standard deviation. These statistics form the foundation for outlier detection in skewed or heavy-tailed distributions where parametric assumptions are violated.
+-   **Robust statistics (median, MAD)**: Resistant measures such as the
+    median and median absolute deviation (MAD) provide reliable central
+    tendency and dispersion estimates that are less influenced by
+    extreme values compared to mean and standard deviation. These
+    statistics form the foundation for outlier detection in skewed or
+    heavy-tailed distributions where parametric assumptions are
+    violated.
 
 ```{r robust_statistics_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary library
@@ -1156,15 +1244,42 @@ robust_outliers <- df_robust %>%
 print(robust_outliers)
 ```
 
--   **Model-based or multivariate detection (e.g., Mahalanobis distance, clustering residuals)**: Advanced techniques account for correlation structures and multidimensional relationships, enabling detection of outliers that appear normal in individual dimensions but are anomalous in multivariate space. Mahalanobis distance measures how many standard deviations an observation is from the distribution center, while clustering residuals identify observations that deviate from expected cluster membership patterns.
+-   **Model-based or multivariate detection (e.g., Mahalanobis distance,
+    clustering residuals)**: Advanced techniques account for correlation
+    structures and multidimensional relationships, enabling detection of
+    outliers that appear normal in individual dimensions but are
+    anomalous in multivariate space. Mahalanobis distance measures how
+    many standard deviations an observation is from the distribution
+    center, while clustering residuals identify observations that
+    deviate from expected cluster membership patterns.
 
--   **Distinguish errors vs. novel but valid observations**: Critical analytical judgment is required to differentiate between measurement errors, data entry mistakes, and legitimate extreme values that represent rare but genuine phenomena. This distinction has profound implications for data quality management and scientific discovery, as premature removal of valid outliers may obscure important patterns or emerging trends.
+-   **Distinguish errors vs. novel but valid observations**: Critical
+    analytical judgment is required to differentiate between measurement
+    errors, data entry mistakes, and legitimate extreme values that
+    represent rare but genuine phenomena. This distinction has profound
+    implications for data quality management and scientific discovery,
+    as premature removal of valid outliers may obscure important
+    patterns or emerging trends.
 
 ## Dimensionality Reduction
 
--   **Motivation: mitigate multicollinearity, noise, and curse of dimensionality**: High-dimensional datasets present computational challenges and statistical complications, including increased sparsity, model overfitting, and reduced discriminatory power of distance-based methods. Dimensionality reduction addresses these issues by transforming data into lower-dimensional representations while preserving essential variance and structural relationships.
+-   **Motivation: mitigate multicollinearity, noise, and curse of
+    dimensionality**: High-dimensional datasets present computational
+    challenges and statistical complications, including increased
+    sparsity, model overfitting, and reduced discriminatory power of
+    distance-based methods. Dimensionality reduction addresses these
+    issues by transforming data into lower-dimensional representations
+    while preserving essential variance and structural relationships.
 
--   **Techniques: Principal Component Analysis (PCA), Factor Analysis, (optionally) t-SNE / UMAP (for exploration)**: PCA identifies orthogonal linear combinations of variables that maximize variance, creating uncorrelated components suitable for regression and classification tasks. Factor Analysis assumes latent constructs underlying observed variables, focusing on shared variance and theoretical interpretation, while non-linear methods like t-SNE and UMAP preserve local neighborhood structures for exploratory visualization of complex data manifolds.
+-   **Techniques: Principal Component Analysis (PCA), Factor Analysis,
+    (optionally) t-SNE / UMAP (for exploration)**: PCA identifies
+    orthogonal linear combinations of variables that maximize variance,
+    creating uncorrelated components suitable for regression and
+    classification tasks. Factor Analysis assumes latent constructs
+    underlying observed variables, focusing on shared variance and
+    theoretical interpretation, while non-linear methods like t-SNE and
+    UMAP preserve local neighborhood structures for exploratory
+    visualization of complex data manifolds.
 
 ```{r pca_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary libraries
@@ -1190,11 +1305,24 @@ cat("Proportion of variance explained by PC1:", round(var_explained[1], 3), "\n"
 cat("Proportion of variance explained by PC2:", round(var_explained[2], 3), "\n")
 ```
 
--   **Interpretability vs. compression trade-offs**: Dimensionality reduction inherently balances the competing objectives of achieving parsimonious data representations and maintaining interpretable relationships to original variables. While aggressive compression maximizes computational efficiency and reduces noise, it may obscure meaningful features and complicate domain-specific interpretation of analytical results.
+-   **Interpretability vs. compression trade-offs**: Dimensionality
+    reduction inherently balances the competing objectives of achieving
+    parsimonious data representations and maintaining interpretable
+    relationships to original variables. While aggressive compression
+    maximizes computational efficiency and reduces noise, it may obscure
+    meaningful features and complicate domain-specific interpretation of
+    analytical results.
 
 ## Data Exploration and Mining
 
--   **Structured EDA workflow: question → visualize → quantify → refine**: Exploratory Data Analysis follows a systematic iterative process that begins with research questions, employs visualization to generate hypotheses, quantifies patterns through statistical measures, and refines understanding through successive analytical cycles. This disciplined approach prevents data dredging while ensuring comprehensive investigation of data characteristics and relationships.
+-   **Structured EDA workflow: question → visualize → quantify →
+    refine**: Exploratory Data Analysis follows a systematic iterative
+    process that begins with research questions, employs visualization
+    to generate hypotheses, quantifies patterns through statistical
+    measures, and refines understanding through successive analytical
+    cycles. This disciplined approach prevents data dredging while
+    ensuring comprehensive investigation of data characteristics and
+    relationships.
 
 ```{r eda_workflow_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary libraries
@@ -1229,9 +1357,20 @@ country_trends <- df_clean %>%
 print(head(country_trends))
 ```
 
--   **PCA for variance structure**: Principal Component Analysis reveals the underlying variance-covariance structure of multivariate data, identifying dimensions of maximum variability and reducing redundancy among correlated variables. By examining eigenvalues and component loadings, analysts determine the effective dimensionality of the dataset and detect dominant patterns in the data.
+-   **PCA for variance structure**: Principal Component Analysis reveals
+    the underlying variance-covariance structure of multivariate data,
+    identifying dimensions of maximum variability and reducing
+    redundancy among correlated variables. By examining eigenvalues and
+    component loadings, analysts determine the effective dimensionality
+    of the dataset and detect dominant patterns in the data.
 
--   **Factor Analysis for latent constructs**: This technique assumes that observed variables are manifestations of unobservable latent factors, making it particularly valuable for psychometric research and construct validation. Unlike PCA, Factor Analysis models measurement error explicitly and focuses on shared rather than total variance, facilitating theoretical interpretation of underlying psychological or economic constructs.
+-   **Factor Analysis for latent constructs**: This technique assumes
+    that observed variables are manifestations of unobservable latent
+    factors, making it particularly valuable for psychometric research
+    and construct validation. Unlike PCA, Factor Analysis models
+    measurement error explicitly and focuses on shared rather than total
+    variance, facilitating theoretical interpretation of underlying
+    psychological or economic constructs.
 
 ```{r factor_analysis_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary libraries
@@ -1276,7 +1415,13 @@ if(nrow(df_wide_fa) > 10 && ncol(df_wide_fa) >= 3) {
 }
 ```
 
--   **Regression Analysis for relationships and predictive structure**: Linear and non-linear regression models quantify relationships between dependent and independent variables, enabling both explanatory analysis of associations and predictive modeling of outcomes. These methods provide parameter estimates, statistical inference, and diagnostic tools to assess model adequacy and identify influential observations.
+-   **Regression Analysis for relationships and predictive structure**:
+    Linear and non-linear regression models quantify relationships
+    between dependent and independent variables, enabling both
+    explanatory analysis of associations and predictive modeling of
+    outcomes. These methods provide parameter estimates, statistical
+    inference, and diagnostic tools to assess model adequacy and
+    identify influential observations.
 
 ```{r regression_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary library
@@ -1308,7 +1453,13 @@ cat("This means death rate changes by", round(coef(model_simple)[2], 3),
     "per 100,000 per year\n")
 ```
 
--   **Clustering (k-means, hierarchical) for pattern discovery (if included)**: Unsupervised clustering algorithms partition observations into homogeneous groups based on similarity metrics, revealing natural taxonomies and segment structures within data. K-means optimizes within-cluster variance through iterative assignment, while hierarchical methods create nested groupings that can be visualized through dendrograms to inform cluster selection.
+-   **Clustering (k-means, hierarchical) for pattern discovery (if
+    included)**: Unsupervised clustering algorithms partition
+    observations into homogeneous groups based on similarity metrics,
+    revealing natural taxonomies and segment structures within data.
+    K-means optimizes within-cluster variance through iterative
+    assignment, while hierarchical methods create nested groupings that
+    can be visualized through dendrograms to inform cluster selection.
 
 ```{r clustering_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary libraries
@@ -1349,7 +1500,13 @@ print(kmeans_result$centers)
 
 ## Causal Inference with Regression Analysis
 
--   **Distinguish association vs. causation**: Statistical association measures correlation between variables without implying directionality, whereas causal inference attempts to establish that changes in one variable directly produce changes in another. Demonstrating causality requires careful consideration of temporal precedence, theoretical mechanisms, and elimination of alternative explanations through research design and statistical controls.
+-   **Distinguish association vs. causation**: Statistical association
+    measures correlation between variables without implying
+    directionality, whereas causal inference attempts to establish that
+    changes in one variable directly produce changes in another.
+    Demonstrating causality requires careful consideration of temporal
+    precedence, theoretical mechanisms, and elimination of alternative
+    explanations through research design and statistical controls.
 
 ```{r association_causation_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary library
@@ -1385,9 +1542,22 @@ cat("Correlation in developing countries:", round(cor_developing, 3), "\n")
 cat("\nDifferent correlations suggest development level may be a confounder.\n")
 ```
 
--   **Model specification and confounding control**: Proper model specification identifies relevant covariates and functional forms to isolate the causal effect of interest while controlling for confounding variables that influence both treatment and outcome. Omitted variable bias, measurement error, and incorrect functional forms threaten causal identification, necessitating theory-driven variable selection and specification testing.
+-   **Model specification and confounding control**: Proper model
+    specification identifies relevant covariates and functional forms to
+    isolate the causal effect of interest while controlling for
+    confounding variables that influence both treatment and outcome.
+    Omitted variable bias, measurement error, and incorrect functional
+    forms threaten causal identification, necessitating theory-driven
+    variable selection and specification testing.
 
--   **Assumptions: linearity, independence, homoskedasticity, exogeneity**: Valid causal inference from regression requires that relationships are linear in parameters, observations are independent, error variance is constant across predictor levels, and explanatory variables are uncorrelated with the error term. Violations of these assumptions bias coefficient estimates, invalidate standard errors, and compromise hypothesis tests, requiring diagnostic assessment and remedial measures.
+-   **Assumptions: linearity, independence, homoskedasticity,
+    exogeneity**: Valid causal inference from regression requires that
+    relationships are linear in parameters, observations are
+    independent, error variance is constant across predictor levels, and
+    explanatory variables are uncorrelated with the error term.
+    Violations of these assumptions bias coefficient estimates,
+    invalidate standard errors, and compromise hypothesis tests,
+    requiring diagnostic assessment and remedial measures.
 
 ```{r regression_assumptions_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary libraries
@@ -1419,7 +1589,13 @@ cat("\nShapiro-Wilk test for normality of residuals:\n")
 cat("p-value:", shapiro_test$p.value, "\n")
 ```
 
--   **Interpretation of coefficients and marginal effects**: Regression coefficients represent the expected change in the dependent variable associated with a one-unit change in the independent variable, holding other factors constant. Marginal effects extend this interpretation to non-linear models and interaction terms, quantifying how the impact of one variable varies across levels of another variable.
+-   **Interpretation of coefficients and marginal effects**: Regression
+    coefficients represent the expected change in the dependent variable
+    associated with a one-unit change in the independent variable,
+    holding other factors constant. Marginal effects extend this
+    interpretation to non-linear models and interaction terms,
+    quantifying how the impact of one variable varies across levels of
+    another variable.
 
 ```{r coefficient_interpretation_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary library
@@ -1452,7 +1628,13 @@ cat("  -> Total effect in 2020+:",
     round(coefs["year_centered"] + coefs["year_centered:recent_period"], 3), "\n")
 ```
 
--   **Sensitivity and robustness checks**: Assessing the stability of causal conclusions across alternative model specifications, sample restrictions, and analytical choices strengthens inference and identifies fragile results dependent on specific assumptions. Techniques include varying control variables, testing different functional forms, examining subgroup effects, and conducting placebo tests to validate identification strategies.
+-   **Sensitivity and robustness checks**: Assessing the stability of
+    causal conclusions across alternative model specifications, sample
+    restrictions, and analytical choices strengthens inference and
+    identifies fragile results dependent on specific assumptions.
+    Techniques include varying control variables, testing different
+    functional forms, examining subgroup effects, and conducting placebo
+    tests to validate identification strategies.
 
 ```{r robustness_checks_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary library
@@ -1492,29 +1674,94 @@ cat("Model 2 R-squared:", round(summary(model2)$r.squared, 4), "\n")
 
 # Project report and presentation
 
-You will find all formal instructions for the project report and presentation in the [guidelines](./topics/projects/dsda_guidelines_ws2526.pdf).
+You will find all formal instructions for the project report and
+presentation in the
+[guidelines](./topics/projects/dsda_guidelines_ws2526.pdf).
 
 **Presentation timetable:**
 
-- Project *Spotify* (Jill, Leonie, Isabel): Week 49 (3.12.2025)
-- Project *Environmental Pollution* (Frederik): Week 49 (3.12.2025)
-- Project *Elon Musk* (Esra, Mira): Week 50 (10.12.2025)
-- Project *Influencer Engagement* (Stella, Athina): Week 50 (10.12.2025)
-- Project *COVID-19 pandemic* (Mats, Laurine, Eric): Week 51 (17.12.2025)
-- Project *AI companion* (Jamder): Week 51 (17.12.2025)  
+-   Project *Spotify* (Jill, Leonie, Isabel): Week 49 (3.12.2025)
+-   Project *Environmental Pollution* (Frederik): Week 49 (3.12.2025)
+-   Project *Elon Musk* (Esra, Mira): Week 50 (10.12.2025)
+-   Project *Influencer Engagement* (Stella, Athina): Week 50 (10.12.2025)
+-   Project *Soccer Player Valuation* (Dominic): Week 51 (10.12.2025)
+-   Project *COVID-19 pandemic* (Mats, Laurine, Eric): Week 51 (17.12.2025)
+-   Project *AI companion* (Jamder): Week 51 (17.12.2025)
 
 **Assessment criteria for the report:**
 
-- Clarity of Research Question (and Objectives)
-- Data Understanding and Preparation
-- Appropriateness of Methods and Analysis
-- Implementation and Code Quality (in R)
-- Interpretation of Results
-- Visualization and Communication
-- Structure and Presentation of the Report
-- Critical Reflection and Limitations
+-   Clarity of Research Question (and Objectives)
+-   Data Understanding and Preparation
+-   Appropriateness of Methods and Analysis
+-   Implementation and Code Quality (in R)
+-   Interpretation of Results
+-   Visualization and Communication
+-   Structure and Presentation of the Report
+-   Critical Reflection and Limitations
+
+**Example linear regression analysis and storytelling:**
+
+```{r example_regression_storytelling, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary libraries
+library(ourdata)
+library(dplyr)
+
+# Opening help of package
+??ourdata
+oecd_preventable
+health_df <- oecd_preventable
+
+# Creating data frames from the ourdata package datasets
+hdi_df <- hdi
+imr_df <- imr
+?imr
+
+# Combining two data frames
+?ourdata::combine
+combined_df <- ourdata::combine(imr_df$name, hdi_df$country, imr_df$value, hdi_df$hdi, 
+                                col1 = "Country", col2 = "IMR", col3 = "HDI")
+
+# Combining with dplyr
+?inner_join
+combined_df2 <- inner_join(imr_df, hdi_df, by = c("name" = "country")) %>%
+  select(Country = name, IMR = value, HDI = hdi)
+
+# Creating scatter plot
+?plot
+plot(combined_df$HDI, combined_df$IMR, main = "Influence of HDI (Human Development Index) on IMR (Infant Mortality Rate)",
+     sub = "HDI = Independent Variable) / IMR = Dependent Variable", ylab = "IMR", xlab = "HDI")
+     
+# Adding regression line
+model <- lm(combined_df$IMR ~ combined_df$HDI)
+abline(model, col = "red")
+
+# Showing summary of the model
+summary(model)
+```
+
+**Conclusion and interpretation of the results:**
+
+The fitted linear model (IMR ~ HDI) shows a very strong, negative association:
+the HDI coefficient is −113.23 (SE = 4.73, t = −23.92, p < 2e‑16). 
+
+This means that a one-unit increase in HDI (note: HDI ranges roughly 0–1) is associated with
+a predicted decrease in infant mortality of about 113 deaths per 1,000 live births. 
+
+Practical meaning
+Higher human development (better education, income and health components of HDI) is
+strongly associated with lower infant mortality.
+
+Caveats and diagnostics to check
+Correlation ≠ causation: this is observational. Confounding (e.g., health spending, access to care,
+urbanization) could drive both HDI and IMR. Avoid causal claims without further analysis.
+
+Summary
+HDI and IMR are strongly negatively associated: higher HDI is linked to substantially lower infant mortality
+(HDI explains ~77% of IMR variation here), but confirmatory causal analysis and diagnostic 
+checks are needed before policy attribution.
 
 \newpage
+
 # Literature {#sec-literature}
 
 All references for this course.
