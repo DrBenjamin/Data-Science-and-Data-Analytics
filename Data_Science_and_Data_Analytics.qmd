@@ -1708,28 +1708,19 @@ presentation in the
 library(ourdata)
 library(dplyr)
 
-# Opening help of package
-??ourdata
-oecd_preventable
-health_df <- oecd_preventable
-
 # Creating data frames from the ourdata package datasets
 hdi_df <- hdi
 imr_df <- imr
-?imr
 
 # Combining two data frames
-?ourdata::combine
 combined_df <- ourdata::combine(imr_df$name, hdi_df$country, imr_df$`deaths/1`, hdi_df$HumanDevelopmentIndex_2024, 
                                 col1 = "Country", col2 = "IMR", col3 = "HDI")
 
 # or combining with dplyr
-?inner_join
 combined_df <- inner_join(imr_df, hdi_df, by = c("name" = "country")) %>%
   select(Country = name, IMR = `deaths/1`, HDI = HumanDevelopmentIndex_2024)
 
 # Creating scatter plot
-?plot
 plot(combined_df$HDI, combined_df$IMR, main = "Influence of HDI (Human Development Index) on IMR (Infant Mortality Rate)",
      sub = "HDI = Independent Variable) / IMR = Dependent Variable", ylab = "IMR", xlab = "HDI")
      
