@@ -136,6 +136,8 @@ disciplines:
     coursebook](https://github.com/DrBenjamin/Data-Science-and-Data-Analytics/blob/66da3d5a65a1f57ab9ca5e35fd91df4077a7bad7/literature/Technical%20Applications%20%26%20Data%20Analytics.pdf/?raw=true)
     by @Gross2021 for further reading on foundations in informatics.
 
+    ![**Source:** *LinkedIn*](./topics/Scope%20and%20Nature%20of%20Data%20Science/Fragile_IT_structure.png)
+
 -   **Computer Science (algorithms, data structures, systems design):**
 
     Computer science provides the computational foundation for data
