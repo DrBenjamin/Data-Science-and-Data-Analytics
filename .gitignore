@@ -55,3 +55,5 @@ rsconnect/
 Data_Science_and_Data_Analytics.html
 Data_Science_and_Data_Analytics.pdf
 /.luarc.json
+**/.cache
+python/.streamlit/secrets.toml

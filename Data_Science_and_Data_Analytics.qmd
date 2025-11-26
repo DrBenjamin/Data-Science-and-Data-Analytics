@@ -1758,8 +1758,37 @@ linked to substantially lower infant mortality (HDI explains \~77% of
 IMR variation here), but confirmatory causal analysis and diagnostic
 checks are needed before policy attribution.
 
-\newpage
+**Example of a heatmap visualization:**
+```{r example_heatmap, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
 
+# Preparing data for heatmap
+heatmap_data <- df_clean %>%
+  filter(year >= 2010 & year <= 2023) %>%
+  group_by(country, year) %>%
+  summarise(mean_death_rate = mean(death_rate, na.rm = TRUE), .groups = "drop")
+
+# Creating heatmap
+ggplot(heatmap_data, aes(x = year, y = country, fill = mean_death_rate)) +
+  geom_tile(color = "white") +
+  scale_fill_viridis_c(option = "plasma", na.value = "grey50") +
+  labs(
+    title = "Heatmap of Mean Preventable Death Rates by Country (2010-2023)",
+    x = "Year",
+    y = "Country",
+    fill = "Mean Death Rate"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.y = element_text(size = 6),
+    plot.title = element_text(face = "bold")
+  )
+```
+
+\newpage
 # Literature {#sec-literature}
 
 All references for this course.
