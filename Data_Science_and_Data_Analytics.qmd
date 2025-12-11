@@ -1682,15 +1682,15 @@ presentation in the
 
 **Presentation timetable:**
 
--   Project *Spotify* (Jill, Leonie, Isabel): Week 49 (3.12.2025)
--   Project *Environmental Pollution* (Frederik): Week 49 (3.12.2025)
--   Project *Elon Musk* (Esra, Mira): Week 50 (10.12.2025)
--   Project *Influencer Engagement* (Stella, Athina): Week 50
+-   Project [*Spotify*](./topics/projects/presentations/Presentation_Isabel_Leonie_Jill.pdf) (Jill, Leonie, Isabel): Week 49 (3.12.2025)
+-   Project [*Environmental Pollution*](./topics/projects/presentations/Presentation_Frederik.pdf) (Frederik): Week 49 (3.12.2025)
+-   Project [*Elon Musk*](./topics/projects/presentations/Presentation_Esra_Mira.pdf) (Esra, Mira): Week 50 (10.12.2025)
+-   Project [*Influencer Engagement*](./topics/projects/presentations/Presentation_Athina_Stella.pdf) (Stella, Athina): Week 50
     (10.12.2025)
--   Project *Soccer Player Valuation* (Dominic): Week 51 (10.12.2025)
--   Project *COVID-19 pandemic* (Mats, Laurine, Eric): Week 51
+-   Project [*Soccer Player Valuation*](./topics/projects/presentations/Presentation_Dominic.pdf) (Dominic): Week 50 (10.12.2025)
+-   Project [*COVID-19 pandemic*]() (Mats, Laurine, Eric): Week 51
     (17.12.2025)
--   Project *AI companion* (Jamder): Week 51 (17.12.2025)
+-   Project [*AI companion*]() (Hosna): Week 51 (17.12.2025)
 
 **Assessment criteria for the report:**
 
