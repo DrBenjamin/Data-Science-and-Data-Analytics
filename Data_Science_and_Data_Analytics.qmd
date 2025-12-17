@@ -1688,9 +1688,9 @@ presentation in the
 -   Project [*Influencer Engagement*](./topics/projects/presentations/Presentation_Athina_Stella.pdf) (Stella, Athina): Week 50
     (10.12.2025)
 -   Project [*Soccer Player Valuation*](./topics/projects/presentations/Presentation_Dominic.pdf) (Dominic): Week 50 (10.12.2025)
--   Project [*COVID-19 pandemic*]() (Mats, Laurine, Eric): Week 51
+-   Project [*COVID-19 pandemic*](./topics/projects/presentations/Presentation_Eric_Laurine_Mats.html) (Mats, Laurine, Eric): Week 51
     (17.12.2025)
--   Project [*AI companion*]() (Hosna): Week 51 (17.12.2025)
+-   Project [*AI companion*](./topics/projects/presentations/Presentation_Hosna.pdf) (Hosna): Week 51 (17.12.2025)
 
 **Assessment criteria for the report:**
 
