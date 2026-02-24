@@ -1682,15 +1682,14 @@ presentation in the
 
 **Presentation timetable:**
 
--   Project [*Spotify*](./topics/projects/presentations/Presentation_Isabel_Leonie_Jill.pdf) (Jill, Leonie, Isabel): Week 49 (3.12.2025)
--   Project [*Environmental Pollution*](./topics/projects/presentations/Presentation_Frederik.pdf) (Frederik): Week 49 (3.12.2025)
--   Project [*Elon Musk*](./topics/projects/presentations/Presentation_Esra_Mira.pdf) (Esra, Mira): Week 50 (10.12.2025)
--   Project [*Influencer Engagement*](./topics/projects/presentations/Presentation_Athina_Stella.pdf) (Stella, Athina): Week 50
-    (10.12.2025)
--   Project [*Soccer Player Valuation*](./topics/projects/presentations/Presentation_Dominic.pdf) (Dominic): Week 50 (10.12.2025)
--   Project [*COVID-19 pandemic*](./topics/projects/presentations/Presentation_Eric_Laurine_Mats.html) (Mats, Laurine, Eric): Week 51
+-   Project *Spotify* [Presentation](./topics/projects/presentations/Presentation_Isabel_Leonie_Jill.pdf) and [Report](./topics/projects/reports/Jill Leonie Isabel/Data_Science_and_Data_Analytics_Jill_Safarli_Prof._Dr._Huber_a_Mr._Gross.pdf) by Jill, Leonie and Isabel
+-   Project *Environmental Pollution* [Presentation](./topics/projects/presentations/Presentation_Frederik.pdf) by Frederik
+-   Project *Elon Musk* [Presentation](./topics/projects/presentations/Presentation_Esra_Mira.pdf) and [Report](./topics/projects/reports/Esra Mira/Data_Science_Data_Analytics_Final_Report_Heinemann_Tonleu.pdf) by Esra & Mira
+-   Project *Influencer Engagement* [Presentation](./topics/projects/presentations/Presentation_Athina_Stella.pdf) and [Report](./topics/projects/reports/Athina Stella/Data-Science-Report-Athina-Stella.pdf) by Stella & Athina
+-   Project *Soccer Player Valuation* [Presentation](./topics/projects/presentations/Presentation_Dominic.pdf) and [Report](./topics/projects/reports/Dominic/Data_Science_and_Data_Analytics_Dominic.pdf) by Dominic
+-   Project *COVID-19 pandemic* [Presentation](./topics/projects/presentations/Presentation_Eric_Laurine_Mats.html) and [Report](./topics/projects/reports/Laurine Mats Eric/Report_Data_Science_and_ Data_Analytics_Eric_Wolff_Laurine_Fleck_Mats_Biermann_Huber_Gross/Report_Data_Science_and_ Data_Analytics_Eric_Wolff_Laurine_Fleck_Mats_Biermann_Huber_Gross.pdf) by Mats, Laurine and Eric
     (17.12.2025)
--   Project [*AI companion*](./topics/projects/presentations/Presentation_Hosna.pdf) (Hosna): Week 51 (17.12.2025)
+-   Project *AI companion* [Presentation](./topics/projects/presentations/Presentation_Hosna.pdf) by Hosna
 
 **Assessment criteria for the report:**
 
